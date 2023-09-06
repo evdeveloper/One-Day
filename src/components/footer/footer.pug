@@ -1,3 +1,50 @@
-footer.footer.bg-dark.py-3
-    .container
-        p © Copyright 2021 ...
+footer.footer
+  .container
+    .footer__inner
+      .footer__col
+        a(href="#").footer__logo.logo
+          +icon('logo','logo__icon')
+      .footer__col
+        .footer__col-title 
+          | Клиентам
+        nav.footer__nav 
+          a(href="#") 
+            span О нас
+          a(href="#") 
+            span Гарантии
+          a(href="#") 
+            span Оплата и доставка
+          a(href="#") 
+            span Контакты
+          a(href="#") 
+            span Статьи
+      .footer__col
+        .footer__col-title
+          | Контакты
+        .footer__phone
+          a(href="tel:+74956625815") +7 495 662-58-15
+          span с 11:00 до 20:00 ежедневно
+        .footer__address
+          | г.Москва, ул. Краснопролетарская, д.7
+        a(href="#" class="button button--gray") Смотреть все контакты
+      .footer__col
+        .footer__social
+          span Мы в соц. сетях:
+          .social
+            a(href="#").social__item
+              img(src="img/socials/social-vk.svg" alt="vk")
+            a(href="#").social__item
+              img(src="img/socials/social-ok.svg" alt="ok")
+            a(href="#").social__item
+              img(src="img/socials/social-ytb.svg" alt="yotube")
+            a(href="#").social__item
+              img(src="img/socials/social-dzen.svg" alt="dzen")
+        .footer__contact
+          span Написать нам:
+          .social
+            a(href="#").social__item
+              img(src="img/socials/social-tg.svg" alt="telegram")
+            a(href="#").social__item
+              img(src="img/socials/social-whats.svg" alt="whatsapp")
+        a(href="#").footer__policy 
+          span Политика конфиденциальности

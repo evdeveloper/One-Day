@@ -1,0 +1,34 @@
+.kitchen {
+  padding: 60px 0 40px;
+  @include media(1100px) { padding: 20px 0 30px; }
+  &__swiper {
+    @include media(769px) {
+      margin-right: -15px;
+      padding-right: 15px;
+    }
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    @include media(769px) { display: flex; gap: 0; }
+  }
+  &__item {
+    border-radius: 5px;
+    background-color: var(--blue);
+    padding: 25px 20px 0;
+    img { width: 100%; }
+    @include media(769px) { 
+      width: 190px;
+      padding: 0;
+      background-color: var(--white);
+    }
+  }
+  &__name {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    margin: 5px 0;
+    line-height: 140%;
+  }
+}

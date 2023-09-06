@@ -1,7 +1,7 @@
 module.exports = [
 	'./gulp/clean',
 	'./gulp/pug',
-	'./gulp/sass',
+	'./gulp/scss',
 	'./gulp/js',
 	'./gulp/img',
 	'./gulp/img-sprite',

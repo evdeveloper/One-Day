@@ -1,0 +1,27 @@
+.cloud {
+  padding: 20px 0;
+  font-size: 12px;
+  font-weight: 500;
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  &__item {
+    border-radius: 50px;
+    padding: 10px 12px;
+    background-color: var(--blue);
+    transition: all .3s;
+    @include media-min(769px) {
+      &:hover,
+      &:focus {
+        background-color: #DEE3E9;
+        color: #4D76A1;
+      }
+    }
+  }
+  &__all {
+    padding: 10px 12px;
+    color: var(--gold);
+  }
+}

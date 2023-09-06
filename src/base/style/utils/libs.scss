@@ -1,0 +1,12 @@
+@import "../../../../node_modules/normalize-scss/sass/_normalize.scss";
+@import "../../../../node_modules/swiper/swiper-bundle.min";
+:root {
+  --swiper-pagination-bullet-size: 5px;
+  --swiper-pagination-bullet-width: 5px;
+  --swiper-pagination-bullet-height: 5px;
+  --swiper-pagination-color: var(--gold);
+  --swiper-pagination-bullet-inactive-color: transparent;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bottom: 14px;
+}
+@import "../../../../node_modules/nouislider/dist/nouislider.min";

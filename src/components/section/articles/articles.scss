@@ -1,0 +1,57 @@
+.articles {
+  $this: &;
+
+  padding: 70px 0 60px;
+  background-color: var(--blue);
+  @include media(769px) {
+    padding: 30px 0;
+  }
+  &__title {
+    font-family: var(--base-font);
+  }
+  &__inner {
+    margin-top: 60px;
+    @include media(769px) { margin-top: 40px; }
+  }
+  &__swiper {
+    @include media(769px) { margin: 0 -15px; padding: 0 15px; }
+  }
+  &__top {
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    img { transition: all .3s; }
+    @include media(769px) { margin-bottom: 20px; }
+  }
+  &__item {
+    width: calc(25% - 37.5px);
+    @include media-min(769px) {
+      &:hover {
+        #{$this}__top img { transform: scale(1.1); }
+      }
+    }
+    @include media(1200px) { width: calc(25% - 15px); }
+    @include media(769px) { width: 240px; }
+    @include media(481px) { width: 210px; }
+  }
+  &__name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    @include line-clamp(2);
+    @include media(1200px) { margin-bottom: 10px; }
+    @include media(769px) { font-size: 16px; }
+    @include media(481px) { -webkit-line-clamp: 1; }
+  }
+  &__descr {
+    font-size: 14px;
+    @include line-clamp(3);
+  }
+  &__upload {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    .button { max-width: 285px; }
+    @include media(481px) { margin-top: 40px; }
+  }
+}

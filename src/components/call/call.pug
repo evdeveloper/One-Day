@@ -1,0 +1,14 @@
+.callComponent
+  .callComponent__btn
+    +icon('phone','callComponent__btn-icon')
+    .callComponent__popup
+      a(href="tel:+74956625815").callComponent__phone
+        .callComponent__phone-icon
+          +icon('phone-line','callComponent__btn-icon')
+        .callComponent__tel
+          span +7 495 662-58-15
+      .social
+        a(href="#").social__item
+          img(src="img/socials/social-tg.svg" alt="telegram")
+        a(href="#").social__item
+          img(src="img/socials/social-whats.svg" alt="whatsapp")

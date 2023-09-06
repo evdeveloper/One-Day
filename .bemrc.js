@@ -14,7 +14,7 @@ module.exports = {
         'bem-tools': {
             plugins: {
                 create: {
-                techs: ['pug', 'sass', 'js'],
+                techs: ['pug', 'scss', 'js'],
                     levels: {
                         'src/components': {
                             default: true

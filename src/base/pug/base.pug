@@ -1,46 +1,148 @@
-include ../../mixins/pug/index.pug
+include ../pug/utils/mixins
 block variables
-    -
-        var baseDir = './';
+  - var baseDir = './';
 
 doctype html
-html(lang="ru")
-    //- Include head
-    include ./head
+html(lang="ru-RU")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    <!--[if IE]>
+    meta(http-equiv='X-UA-Compatible', content="IE = edge")
+    <![endif]-->
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    meta(name="color-theme" content="")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" type='text/css' href="./css/main.css")
 
-    body(class=pageClass)
-        .page
-            .page__content
-                //- Include header
-                include ../../components/header/header
-
-                if (pageClass !== 'homepage')
-                    nav.breadcrumbs.mb-sm-30
-                        .container
-                            ul.breadcrumbs__list
-                                li
-                                    a(href="/") Главная
-                                    span.breadcrumbs__divider /
-
-                                li.is-active #{title}
-
-                block top-position
-
-                .container
-                    .row
-                        block columns
-
-                block bottom-position
-
-            //- Include footer
-            include ../../components/footer/footer
-
-        //- Include callback modal
-        include ../../components/form/form--callback
-
-        a.go-top.go-top--js(href='#')
-            +icon('arrow-up')
-
-        script(src=`${baseDir}js/main.js`)
-
-        block script
+    <!--[if lt IE 9]>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+    <![endif]-->
+  body(class=pageClass)
+    .wrapper
+      include ../../components/header/header
+      main.content#content
+        block content
+      include ../../components/footer/footer
+    include ../../components/mobileMenu/mobileMenu
+    include ../../components/filterModal/filterModal
+    .popup.popup-one-click(data-popup-target="one-click")
+      .popup__backdrop
+      .popup__content
+        .popup__close
+          +icon('close','popup__close-icon')
+        .popup__title 
+          | Купить в 1 клик
+        form.popup__form(action='/')
+          .popup__form-inner
+            .form__item
+              label.form__label Ваш номер телефона
+              .form__field
+                .form__required обязательное
+                input(type="tel" class="form__input" name="phone" placeholder="+7 ___ ___-__-__")
+            .form__item
+              .form__field
+                .form__required обязательное
+                input(type="email" class="form__input" name="email" placeholder="E-mail")
+          button(type="submit" class="button button--fill")
+            | Позвоните мне для уточнения способа оплаты и получения
+          .form__agree
+            input(type="checkbox" checked name="agree" id="agree")
+            label(for="agree")
+              +icon('check','form__agree-icon')
+              | Нажимая кнопку "Подтверждаю заказ", я даю согласие на обработку моих персональных данных в соответствии с 
+              a(href="#") 
+                span Условиями 
+              | и соглашаюсь с 
+              a(href="#")
+                span Публичной офертой
+    .popup.popup-sign-up(data-popup-target="sign-up")
+      .popup__backdrop
+      .popup__content
+        .popup__close
+          +icon('close','popup__close-icon')
+        .popup__title 
+          | Записаться на просмотр
+        .popup__address
+          .popup__address-item
+            span г.Москва, 
+            | ул. Краснопролетарская, д.7
+          .popup__address-item
+            span Работаем ежедневно 
+            | с 11:00 до 20:00 (необязательно)
+        form.popup__form(action='/')
+          .popup__form-inner
+            .form__item
+              label.form__label 
+                | В какой день и время
+                br
+                | вам было бы удобно зайти?
+              textarea(name="message" class="form__textarea")
+            .form__item
+              label.form__label Ваш номер телефона
+              .form__field
+                .form__required обязательное
+                input(type="tel" class="form__input" name="phone" placeholder="+7 ___ ___-__-__")
+            button(type="submit" class="button button--fill")
+              | Записаться
+          .form__agree
+            input(type="checkbox" checked name="agree" id="agree1")
+            label(for="agree1")
+              +icon('check','form__agree-icon')
+              | Нажимая кнопку "Подтверждаю заказ", я даю согласие на обработку моих персональных данных в соответствии с 
+              a(href="#") 
+                span Условиями 
+              | и соглашаюсь с 
+              a(href="#")
+                span Публичной офертой
+    .popup.popup-gallery(data-popup-target="gallery")
+      .popup__backdrop
+      .popup__close 
+        +icon('close','popup__close-icon')
+      .popup__content
+        .swiper.popupGallery
+          .popupGallery__inner.swiper-wrapper
+            .popupGallery__slide.swiper-slide
+              img(data-src="images/popup/1.webp" alt="img").lozad
+            .popupGallery__slide.swiper-slide
+              img(data-src="images/popup/1.webp" alt="img").lozad
+            .popupGallery__slide.swiper-slide
+              img(data-src="images/popup/1.webp" alt="img").lozad
+            .popupGallery__slide.swiper-slide
+              img(data-src="images/popup/1.webp" alt="img").lozad
+            .popupGallery__slide.swiper-slide
+              img(data-src="images/popup/1.webp" alt="img").lozad
+            .popupGallery__slide.swiper-slide
+              img(data-src="images/popup/1.webp" alt="img").lozad
+          .swiper-pagination.popupGallery__pagination
+      .popupGallery__prev.popupGallery__arrow
+        +icon('arrow-left','popupGallery__icon')
+      .popupGallery__next.popupGallery__arrow
+        +icon('arrow-right','popupGallery__icon')
+    .popup.popup-delete-product(data-popup-target="delete-product")
+      .popup__backdrop
+      .popup__close 
+        +icon('close','popup__close-icon')
+      .popup__content
+        .popup__type-alert
+          .popup__title Точно хотите удалить товар?
+          .popup__wrap
+            button(type="button" class="button button--gold js-basket-product-remove") Удалить
+            button(type="button" class="button js-basket-product-postpone") Отложить
+    if(pageClass === 'basket-page')
+      .fixed-mobile-block.confirm-order
+        button(type="button" class="button button--fill js-confirm-order" data-scroll-element="order-form")
+          | Подтверждаю заказ
+    if(pageClass === 'card-page')
+      .fixed-mobile-block.card-mobile-button
+        button(type="button" class="button button-outline" data-popup-open="one-click")
+          | Купить в 1 клик
+        button(type="button" class="button button-buy button--fill js-add-basket")
+          +icon('basket-bold','button-buy__icon')
+          span В корзину
+    script(src="./js/main.js")
+    block script

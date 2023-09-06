@@ -1,0 +1,111 @@
+footer { flex: 0 0 auto; }
+.footer {
+  padding: 55px 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 14px;
+  @include media(769px) {
+    padding: 40px 0;
+  }
+  &__logo {
+    width: 150px;
+    height: 60px;
+  }
+  &__address { margin-bottom: 24px; }
+  &__col {
+    &-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 38px;
+      @include media(600px) { margin-bottom: 15px; }
+      @include media(415px) { text-align: center; }
+    }
+    @include media(600px) {
+      &:first-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &:last-child { align-self: flex-end; }
+    @include media(415px) { text-align: center; }
+  }
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+    a { color: var(--white); }
+    span { opacity: 0.7; font-size: 12px; }
+    @include media(415px) { align-items: center; }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    @include media(600px) { gap: 35px; }
+    @include media(415px) { justify-content: center; }
+  }
+  &__nav {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    @include media(415px) { align-items: center; }
+    a {
+      color: var(--white);
+      font-weight: 500;
+      @include media(600px) { font-weight: normal; }
+      span {
+        position: relative;
+        &:after {
+          content: '';
+          width: 0;
+          position: absolute;
+          top: 100%;
+          transition: width .3s;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 1px;
+          background-color: var(--white);
+          @include media(600px) { width: 100%; }
+        }
+      }
+      @include media-min(769px) {
+        &:hover { span:after { width: 100%; opacity: 1; }}
+      }
+    }
+  }
+  &__social,
+  &__contact {
+    display: flex;
+    align-items: center;
+    @include media(415px) { flex-direction: column; }
+  }
+  &__social { 
+    gap: 14px;
+    margin-bottom: 34px;
+    @include media(600px) { margin-bottom: 30px; }
+  }
+  &__contact { 
+    gap: 24px;
+    margin-bottom: 50px;
+    @include media(415px) { gap: 14px; margin-bottom: 20px; }
+  }
+  &__policy { 
+    color: var(--gray);
+    transition: color .3s;
+    font-weight: normal;
+    span { border-bottom: 1px solid; }
+    @include media-min(769px) {
+      &:hover { color: var(--white); }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}

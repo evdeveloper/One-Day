@@ -1,0 +1,15 @@
+.team {
+  padding: 60px 0 80px;
+  @include media(960px) {
+    padding: 30px 0 40px;
+  }
+  .swiperGroup {
+    margin-top: 70px;
+    @include media(481px) { margin-top: 30px; }
+  }
+  &__slide {
+    @include media(769px) {
+      .swiperGroup__descr { @include line-clamp(10); }
+    }
+  }
+}

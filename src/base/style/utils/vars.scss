@@ -1,0 +1,30 @@
+:root {
+  --base-font: 'CeraPro', sans-serif;
+  --closer-font: 'CloserText', sans-serif;
+  --nunito-font: 'Nunito', sans-serif;
+  --base-font-size: 16px;
+  --duration: .3s;
+  --white:#fff;
+  --black:#000;
+  --gold: #D2AF6F;
+  --gray: #93A5BC;
+  --red:  #D44444;
+  --blue: #EDF2FB;
+  --asphalt: #606060;
+  --blueberry: #4D76A1;
+  --gains: #D9D9D9;
+  --blue-menu: #E6EDFB;
+  --pantone: #C7C7C7;
+  --arch: #333333;
+
+  // button settings
+  --button-height: 42px;
+  --button-font-size: var(--base-font-size);
+  --button-border: 2px solid var(--black);
+  --button-border-radius: 5px;
+  --button-font: var(--base-font);
+  --button-font-weight: 700;
+  --button-color: var(--white);
+}
+
+@import "utils/libs";

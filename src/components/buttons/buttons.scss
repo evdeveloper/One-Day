@@ -1,0 +1,61 @@
+.button {
+  $this: &;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+  text-align: center;
+  font-size: var(--button-font-size);
+  font-family: var(--button-font);
+  height: var(--button-height);
+  border: var(--button-border);
+  transition: all .3s;
+  padding: 0 30px;
+  border-radius: var(--button-border-radius);
+  &:hover,
+  &:focus {
+    @include media-min(769px) {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+  &--fill {
+    background-color: var(--black);
+    color: var(--white);
+    @include media-min(769px) {
+      &:hover,
+      &:focus {
+        background-color: var(--arch);
+        border-color: var(--arch);
+      }
+    }
+  }
+  &#{$this}--gray {
+    background-color: rgba(147, 165, 188, 0.3);
+    color: var(--white);
+    @include media-min(769px) {
+      &:hover,
+      &:focus {
+        background-color: rgba(147, 165, 188, 0.5);
+      }
+    }
+  }
+  &#{$this}--gold {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+    #{$this}-buy__icon { fill: var(--black); }
+  }
+  &-buy {
+    gap: 10px;
+    &__icon {
+      width: 16px;
+      height: 17px;
+      fill: var(--white);
+      transition: fill .3s;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.breadcrumbs
+  .container
+    .breadcrumbs__inner
+      if(pageClass === 'completed-page')
+        a(href="#").breadcrumbs__link Антикварный магазин
+        span ›
+        .breadcrumbs__current Спасибо за заказ
+      else if(pageClass === 'result-page')
+        a(href="#").breadcrumbs__link Антикварный магазин
+        span ›
+        a(href="#").breadcrumbs__link Выбор по Особенностям
+        span ›
+        .breadcrumbs__current Материал
+      else
+        a(href="#").breadcrumbs__link Антикварный магазин
+        span ›
+        a(href="#").breadcrumbs__link Кухонная утварь
+        span ›
+        a(href="#").breadcrumbs__link Посуда
+        span ›
+        a(href="#").breadcrumbs__link Сервизы
+        span ›
+        a(href="#").breadcrumbs__link Кофейные сервизы
+        span ›
+        a(href="#").breadcrumbs__link Немецкий сервиз
+        span ›
+        .breadcrumbs__current Немецкий кофейный сервиз

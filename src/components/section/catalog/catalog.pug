@@ -1,0 +1,229 @@
+.catalog
+  .container
+    .catalog__inner
+      aside.sidebar
+        a(href="#").category 
+          span Кухонная утварь
+          .category__count 2000
+        .category__sub
+          a(href="#").category__sub-name
+            +icon('arrow-down','category__sub-name-icon')
+            span Антикаварная посуда
+            .category__count 1200
+          a(href="#").category__sub-child
+            span Винно-ликерные сервизы
+            .category__count 200
+          a(href="#").category__sub-child
+            span Кофейные сервизы
+            .category__count 10
+          a(href="#").category__sub-child
+            span Столовые сервизы
+            .category__count 80
+          a(href="#").category__sub-child
+            span Горшки для запекания
+            .category__count 180
+          a(href="#").category__sub-child
+            span Кастрюли
+            .category__count 350
+        include ../../../components/filter/filter
+      .catalog__main 
+        header.filter__header
+          .filter__sort
+            +icon('filter','filter__sort-icon')
+            | Упорядочить по:
+          .filter__sort-item(title="Рекомендуемые").active
+            | Рекомендуемые
+          .filter__sort-item(title="Новинки")
+            | Новинки
+          .filter__sort-item(title="Сначала дешевые")
+            | Сначала дешевые
+          .filter__sort-item(title="Сначала дорогие")
+            | Сначала дорогие
+          .filter__sort-item(title="Сначала старые")
+            | Сначала старые
+        .filter__inner
+          .filter__select
+            .filter__select-top
+              span Рекомендуемые
+            .filter__select-list
+              .filter__select-item.active
+                | Рекомендуемые
+              .filter__select-item
+                | Новинки
+              .filter__select-item
+                | Сначала дешевые
+              .filter__select-item
+                | Сначала дорогие
+              .filter__select-item
+                | Сначала старые
+          .filter__open 
+            +icon('filter-mobile','filter__open-icon')
+
+        .cardMain
+          .cardMain__inner
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+            .cardMain__item
+              .cardMain__top
+                .swiper.cardMain__swiper
+                  .swiper-wrapper.cardMain__wrapper
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/1.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                    .swiper-slide.cardMain__slide
+                      img(data-src="images/catalog/2.webp" alt="img").lozad
+                  .swiper-pagination
+                .cardMain__like.like.js-like
+                  +icon('heart','like__icon')
+              .cardMain__body
+                a(href="#").cardMain__descr
+                  | Сервиз чайный на 4 персоны с золотым цветочным декором на зеленом фоне (11 предметов), фарфор, роспись, золочение, Товарищество М.С. Кузнецова в Вербилках (г. Дмитров), Российская империя, 1889-1917 гг.
+                .cardMain__price
+                  | 55 000 ₽
+        include ../../../../src/components/pagination/pagination
+        include ../../../../src/components/cloud/cloud
+        a(href="#").popular-search
+          span Смотреть все популярные способы поиска в категории “Кофейные сервизы”

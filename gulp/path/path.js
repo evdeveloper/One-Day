@@ -9,9 +9,9 @@ module.exports = {
 			fonts: 'dist/fonts',
 			zip: 'zip'
 		},
-		src: { // Source files
+		src: {
 			pug: 'src/*.pug',
-			style: 'src/base/sass/main.sass',
+			style: 'src/base/style/main.scss',
 			img: 'src/images/**/*.+(png|jpg|jpeg|gif)',
 			imgComp: 'src/components/**/*.+(png|jpg|jpeg|gif)',
 			pngIcons: 'src/images/icons/png/*.png',
@@ -22,7 +22,7 @@ module.exports = {
 			favicon_sm: 'src/images/favicon-sm.png',
 			resources: 'src/resources/**/*'
 		},
-		watch: { // Watch files
+		watch: {
 			json: 'src/base/data/*.json',
 			pug: 'src/**/*.pug',
 			style: 'src/**/*.+(sass|scss|css)'

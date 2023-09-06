@@ -1,0 +1,72 @@
+.features {
+  $this: &;
+
+  padding: 55px 0 65px;
+  @include media(769px) { padding: 40px 0;}
+  .default__title {
+    @include media(481px) {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 65px;
+    @include media(769px) {
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+    @include media(600px) { grid-template-columns: repeat(2, 1fr); }
+    @include media(481px) { grid-template-columns: 1fr; gap: 0; }
+  }
+  &__item {
+    @include media-min(769px) {
+      &:hover {
+        #{$this}__top img { transform: scale(1.1); }
+      }
+    }
+    @include media(481px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      gap: 20px;
+      border-top: 1px solid var(--gray);
+      &:last-child { border-bottom: 1px solid var(--gray); }
+    }
+  }
+  &__line {
+    display: none;
+    width: 50px;
+    height: 20px;
+    @include media(481px) { display: block; }
+  }
+  &__icon {
+    @include size(100%);
+    fill: var(--gray);
+  }
+  &__top {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    img { transition: all .3s; }
+    @include media(769px) {
+      margin-bottom: 10px;
+    }
+    @include media(481px) {
+      @include size(65px);
+      flex: 0 0 auto;
+      border-radius: 10px;
+      margin-bottom: 0;
+      img { object-fit: cover; @include size(100%); }
+    }
+  }
+  &__body {
+    font-size: 25px;
+    font-weight: 500;
+    @include media(769px) { font-size: 20px; }
+    @include media(481px) { flex: 1; }
+  }
+}

@@ -1,0 +1,12 @@
+extends base/pug/base
+
+block variables
+  - var title = 'Результаты поиска'
+  - var pageClass = 'result-page'
+  - var baseDir = './';
+
+
+
+block content
+  include ../src/components/breadcrumbs/breadcrumbs
+  include ../src/components/section/result/result

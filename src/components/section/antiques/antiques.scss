@@ -1,0 +1,61 @@
+.antiques {
+  $this: &;
+
+  padding: 64px 0 45px;
+  @include media(960px) { padding: 30px 0 40px; }
+  @include media(769px) { padding-bottom: 30px; }
+  @include media(481px) { padding: 20px 0 60px; }
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  &__slide {
+    .swiperGroup {
+      &__top { 
+        margin-bottom: 33px;
+        @include media(769px) { margin-bottom: 20px; }
+        @include media(481px) { margin-bottom: 12px; }
+      }
+      &__descr { 
+        @include line-clamp(3);
+        @include media(769px) { font-size: 14px; }
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    gap: 10px;
+    &-icon {
+      width: 37px;
+      height: 10px;
+    }
+    span {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 0;
+        height: 1px;
+        background-color: var(--black);
+        transition: width .3s;
+      }
+    }
+    @include media-min(769px) {
+      &:hover { span:after { width: 100%; } }
+    }
+    @include media(481px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+section.pageCard
+  .container
+    .pageCard__inner
+      .pageCard__col
+        .swiper.galleryCard
+          .swiper-wrapper.galleryCard__inner
+            .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
+              img(data-src="images/card/1.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
+              img(data-src="images/card/2.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item(data-popup-open="gallery")
+              img(data-src="images/card/3.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+            .swiper-slide.galleryCard__item(data-popup-open="gallery")
+              img(data-src="images/card/4.webp" alt="img").lozad
+              .galleryCard__open
+                +icon('plus-open','galleryCard__icon')
+          .swiper-pagination
+          button(type="button" class="galleryCard__btn button js-gallery-upload")
+            | Смотреть ещё фотографии
+      .pageCard__col
+        h1.pageCard__title
+          | Сервиз чайно-кофейный с золотым цветочным декором на 4 персоны (19 предметов), фарфор, кобальт, золочение, Weimar Porzellan (Веймарский фарфор), Германия, 1975-1991 гг.
+        .pageCard__author
+          | роспись столика копирует работу английского художника-декоратора 18 века J. Baker
+        .pageCard__fixed
+          .pageCard__art Артикул: 499563
+          .pageCard__wrap
+            .pageCard__price
+              | 49 500 ₽
+            .pageCard__count В наличии: 1 шт.
+          .pageCard__buy 
+            button(type="button" class="button button-buy button--fill js-add-basket")
+              +icon('basket-bold','button-buy__icon')
+              span Добавить в корзину
+            .pageCard__like.js-like
+              +icon('heart','pageCard__like-icon')
+          a(href="#" data-popup-open="one-click").buyOneClick
+            span Купить в 1 клик
+          include ../../../../src/components/rating/rating
+          .pageCard__delivery
+            +icon('delivery','pageCard__delivery-icon')
+            | Бесплатно доставим этот предмет в любой город РФ
+          .infoScroll
+            a(href="#" data-scroll-element="product").infoScroll__link
+              span Описание предмета
+            a(href="#" data-scroll-element="options").infoScroll__link
+              span Характеристики
+          .singupGallery
+            .singupGallery__col
+              .singupGallery__img
+                +icon('masson')
+            .singupGallery__col
+              button(type="submit" class="button button--fill" data-popup-open="sign-up") Записаться
+              p на просмотр этого предмета в антикварной галерее в центре Москвы
+      .pageCard__col
+        .infoProduct
+          .infoProduct__item(data-scroll-target="product")
+            .infoProduct__title 
+              | Описание предмета:
+            .infoProduct__inner
+              ul.infoProduct__list
+                li.infoProduct__li
+                  span 1. Кофейник (чайник) 
+                  | - 1шт. 1500ml
+                li.infoProduct__li
+                  span 2. Чашка 
+                  | - 4 шт. 180мл.
+                li.infoProduct__li
+                  span 3. Сахарница 
+                  | - 1 шт.
+                li.infoProduct__li
+                  span 4. Сливочник 
+                  | - 1 шт.
+              ul.infoProduct__list
+                li.infoProduct__li 
+                  span 5. Десертная тарелка 
+                  | - 4 шт.
+                li.infoProduct__li
+                  span 6. Блюдце 
+                  | - 4шт.
+                li.infoProduct__li
+                  span 7. Розетка 
+                  | - 4шт.
+          .infoProduct__item
+            .infoProduct__title
+              | Описание предмета:
+            p Редкая статуэтка , относящаяся к серии "Счастливое детство", с авторской подписью. Скульптор Кучкина Таисия Сергеевна (1909г-1942г). Погибла в блокадном Ленинграде. Автор росписи данного экземпляра - Лупанова Елизавета Николаевна Николаевна (1910г-1973г). Аналогичная статуэтка в другой росписи Лупановой Е.Н. хранится в собрании "Государственного Эрмитажа".
+            p Статуэтка в прекрасном состоянии, практически не имеет дефектов кроме производственного. (печная трещина от обжига).
+          .infoProduct__item(data-scroll-target="options")
+            .infoProduct__title 
+              | Характеристики
+            .optionsProduct
+              .optionsProduct__col
+                .optionsProduct__item
+                  span Сохранность: 
+                  | легкая потертость, загрязнения, мелкий скол красочного слоя (на лике)
+                .optionsProduct__item
+                  span Реставрации: 
+                  | заплатка на холсте в месте прорыва. Год: 1975-1991 гг.
+                .optionsProduct__item
+                  span Материал: 
+                  a(href="#")
+                    span Фарфор, 
+                  a(href="#")
+                    span кобальт, 
+                  a(href="#")
+                    span золочение
+                .optionsProduct__item.question
+                  .question__inner
+                    span ШхДхВ (мм): 
+                    | 275 x 150 x 260
+                  .question__label(title="Какое то описание")
+                    +icon('question','question__icon')
+                .optionsProduct__item
+                  span Вес предмета (г): 
+                  | 3852
+                .optionsProduct__item
+                  span Степень изношенности: 
+                  | Незначительные следы бытования
+              .optionsProduct__col
+                .optionsProduct__item
+                  span Персон: 
+                  | 4
+                .optionsProduct__item
+                  span Сюжет: 
+                  a(href="#") 
+                    span Гирлянды, Золотой фриз
+                  a(href="#") 
+                    span Золотой фриз
+                .optionsProduct__item.question
+                  .question__inner
+                    span Бренд: 
+                    a(href="#")
+                      span Meissener Porzellan 
+                    a(href="#")
+                      span (Мейсенский фарфор)
+                  .question__label(title="Какое то описание")
+                    +icon('question','question__icon')
+                .optionsProduct__item
+                  span Страна: 
+                  a(href="#") 
+                    span Германия
+                .optionsProduct__item
+                  span Стиль: 
+                  a(href="#")
+                    span Классика, 
+                  a(href="#")
+                    span Кобальт, 
+                  a(href="#")
+                    span Ампир, 
+                  a(href="#")
+                    span Рококо, 
+                  a(href="#")
+                    span Барокко
+                .optionsProduct__item
+                  span Для еды/напитков: 
+                  | Чай, Кофе
+                .optionsProduct__item
+                  span Цвет: 
+                  | белый, золотистый, кобальтовый
+                .optionsProduct__item
+                  span Особенности: 
+                  | Люкс
+    .resultCircle
+      .resultCircle__inner
+        a(href="#").resultCircle__item
+          .resultCircle__img
+            img(data-src="images/material/small/1.webp" alt="img").lozad
+          .resultCircle__main
+            span Бронзирование
+            .resultCircle__category Подкатегория
+        a(href="#").resultCircle__item
+          .resultCircle__img
+            img(data-src="images/material/small/2.webp" alt="img").lozad
+          .resultCircle__main
+            span Глазурь
+            .resultCircle__category Бренд
+        a(href="#").resultCircle__item
+          .resultCircle__img
+            img(data-src="images/material/small/3.webp" alt="img").lozad
+          .resultCircle__main
+            span Пластик, краска
+            .resultCircle__category Раздел

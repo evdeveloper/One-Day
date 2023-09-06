@@ -1,0 +1,14 @@
+extends base/pug/base
+
+append variables
+  - var title = 'Карточка товара'
+  - var pageClass = 'card-page'
+  - var baseDir = './';
+
+block content
+  include ../src/components/breadcrumbs/breadcrumbs
+  include ../src/components/section/card/card
+  include ../src/components/section/advantages/advantages
+  include ../src/components/section/similar/similar
+  include ../src/components/section/selection/selection
+ 

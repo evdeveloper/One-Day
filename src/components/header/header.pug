@@ -1,12 +1,157 @@
-header.header.py-15.mb-30
+header.header
+  a(href="/company/contacts.html").header__top
+    .header__location.location
+      +icon('location','location__icon')
+      span Москва, ул. Краснопролетарская, д.7
+    .header__phone.phone
+      +icon('phone','phone__icon')
+      span +7 495 662-58-15
+  .header__bottom
     .container
-        .row.align-items-center
-            .col-3.d-lg-none
-                include ../hamburger/hamburger
+      .header__inner
+        a(href="#").header__logo.logo
+          +icon('logo','logo__icon')
+        .catalogMenu
+          +icon('catalog','catalogMenu__icon')
+          | Каталог
+        include ../search/search
+        .counterLink
+          a(href="#" title="Понравившиеся").counterLink__item
+            .counterLink__count 10
+            +icon('heart','counterLink__icon')
+          a(href="#" title="В корзине").counterLink__item
+            .counterLink__count 2
+            +icon('basket','counterLink__icon')
+      nav.main-nav
+        ul.main-nav__list
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Кухня
+            .main-dropdown
+              .container
+                .main-dropdown__grid
+                  .main-dropdown__col
+                    a(href="#").main-dropdown__title
+                      | Посуда
+                    a(href="#").main-dropdown__link
+                      | Сервизы
+                    a(href="#").main-dropdown__link
+                      | Посуда для приготовления
+                    a(href="#").main-dropdown__link
+                      | Посуда для сервировки и хранения
+                    a(href="#").main-dropdown__link
+                      | Посуда для употребления
+                  .main-dropdown__col
+                    a(href="#").main-dropdown__title
+                      | Столовые приборы
+                    a(href="#").main-dropdown__link
+                      | Вилки
+                    a(href="#").main-dropdown__link
+                      | Кухонные ножницы
+                    a(href="#").main-dropdown__link
+                      | Ложки
+                    a(href="#").main-dropdown__link
+                      | Лопатки
+                    a(href="#").main-dropdown__link
+                      | Наборы столовых приборов
+                    a(href="#").main-dropdown__link
+                      | Ножи и топорики
+                    a(href="#").main-dropdown__link
+                      | Орехоколы
+                    a(href="#").main-dropdown__link
+                      | Половники
+                    a(href="#").main-dropdown__link
+                      | Щипцы
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Интерьер и декор
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Личное
+            .main-dropdown
+              .container
+                .main-dropdown__grid
+                  .main-dropdown__col
+                    a(href="#").main-dropdown__title
+                      | Пасхальные яйца
+                  .main-dropdown__col
+                    a(href="#").main-dropdown__title
+                      | Украшения
+                    a(href="#").main-dropdown__link
+                      | Сервизы
+                    a(href="#").main-dropdown__link
+                      | Броши и заколки
+                    a(href="#").main-dropdown__link
+                      | Бусы
+                    a(href="#").main-dropdown__link
+                      | Цепочки
+                    a(href="#").main-dropdown__link
+                      | Фибулы
+                    a(href="#").main-dropdown__link
+                      | Кольца и перстни
+                    a(href="#").main-dropdown__link
+                      | Колье
+                    a(href="#").main-dropdown__link
+                      | Серьги
+                    a(href="#").main-dropdown__link
+                      | Браслеты
+                    a(href="#").main-dropdown__link
+                      | Запонки и зажимы для галстука
+                    a(href="#").main-dropdown__link
+                      | Подвески и кулоны
+                    a(href="#").main-dropdown__link
+                      | Медальоны
+                    a(href="#").main-dropdown__link
+                      | Аксессуары и фурнитура
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Печатная продукция
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Религия
+            .main-dropdown
+              .container
+                .main-dropdown__list
+                  a(href="#").main-dropdown__item
+                    | Буддистская атрибутика
+                  a(href="#").main-dropdown__item
+                    | Индуистская атрибутика
+                  a(href="#").main-dropdown__item
+                    | Католическая атрибутика
+                  a(href="#").main-dropdown__item
+                    | Православная атрибутика
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Часы
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Военное-политическое
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Техника
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Игрушки
+          li.main-nav__item
+            a(href="#").main-nav__link
+              | Смотреть всё
 
-            .col-xl-4.col-lg-3.col-6.text-center.text-lg-start
-                .logo
-                    include ../logo/logo
-
-            .col-xl-8.col-lg-9.col-3
-                include ../mainmenu/mainmenu
+.headerMobile
+  .headerMobile__inner
+    include ../../../src/components/hamburger/hamburger
+    include ../../../src/components/call/call
+    a(href="/").headerMobile__logo 
+      +icon('logo-small','headerMobile__logo-icon')
+    .search
+      form(action="/" class="search__form")
+        .search__inner
+          input(type="text" name="search" autocomplete="off" aria-label="search" class="search__input" placeholder="Поиск антиквариата и винтажа среди 10 000 предметов")
+          button(type="submit" class="search__btn")
+            +icon('search', 'search__icon')
+    .counterLink
+      a(href="#" title="Понравившиеся").counterLink__item
+        .counterLink__count 10
+        +icon('heart','counterLink__icon')
+      a(href="#" title="В корзине").counterLink__item
+        .counterLink__count 2
+        +icon('basket','counterLink__icon')

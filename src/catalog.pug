@@ -1,0 +1,14 @@
+extends base/pug/base
+
+block variables
+  - var title = 'Каталог'
+  - var pageClass = 'catalog-page'
+  - var baseDir = './';
+
+
+
+block content
+  include ../src/components/breadcrumbs/breadcrumbs
+  include ../src/components/section/kitchen/kitchen
+  include ../src/components/section/catalog/catalog
+  include ../src/components/section/articles/articles

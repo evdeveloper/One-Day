@@ -1,0 +1,12 @@
+extends base/pug/base
+
+block variables
+  - var title = 'Заказ оформлен'
+  - var pageClass = 'completed-page'
+  - var baseDir = './';
+
+
+
+block content
+  include ../src/components/breadcrumbs/breadcrumbs
+  include ../src/components/section/completed/completed

@@ -1,0 +1,31 @@
+.search {
+  flex: 1;
+  &__inner {
+    display: flex;
+    border-radius: 8px;
+    border: 2px solid var(--gold);
+    background-color: var(--gold);
+    height: 41px;
+    overflow: hidden;
+  }
+  &__icon {
+    @include size(20px);
+    fill: var(--white);
+  }
+  &__input {
+    @include size(100%);
+    padding: 0 25px;
+    font-size: 14px;
+    border-radius: 8px;
+    font-family: var(--base-font);
+    background-color: var(--white);
+    &::placeholder { transition: opacity .3s; color: var(--gray); }
+    &:focus {
+      &::placeholder { opacity: 0; }
+    }
+  }
+  &__btn {
+    padding: 0 20px;
+    background-color: var(--gold);
+  }
+}

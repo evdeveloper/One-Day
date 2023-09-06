@@ -1,0 +1,12 @@
+extends base/pug/base
+
+block variables
+  - var title = 'Корзина'
+  - var pageClass = 'basket-page'
+  - var baseDir = './';
+
+
+
+block content
+  include ../src/components/section/basket/basket
+  include ../src/components/section/advantages/advantages

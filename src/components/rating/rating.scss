@@ -1,0 +1,82 @@
+.rating {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 40px 0 50px;
+  &__title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    @include media(481px) {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__check {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 100px;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 100%;
+    text-align: center;
+    &:last-child { &:after { display: none; }}
+    span { transition: opacity var(--duration); }
+    &.active {
+      #{$this}__circle + span { opacity: 1; }
+    }
+    @include media(415px) { font-size: 10px; }
+  }
+  &__star {
+    @include size(20px);
+    margin-top: -5px;
+    background: url('../img/star-gold.svg') no-repeat;
+    & + span {
+      color: var(--black);
+      font-weight: 500;
+    }
+  }
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(20px);
+    flex: 0 0 auto;
+    margin-top: -5px;
+    &:before {
+      content: '';
+      @include size(10px);
+      border-radius: 100%;
+      flex: 0 0 auto;
+      background: var(--gray);
+    }
+    & + span { @include media(481px) { opacity: 0; } }
+  }
+  &__line {
+    position: relative;
+    min-width: 20px;
+    flex: 1;
+    &:after {
+      content: '';
+      width: calc(100% + 40px);
+      height: 2px;
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      flex: 0 0 auto;
+      background-color: var(--gray);
+      @include media(481px) { width: calc(100% + 30px); }
+    }
+    @include media(415px) { min-width: 10px; }
+  }
+}

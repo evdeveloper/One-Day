@@ -1,0 +1,85 @@
+section.basket 
+  .container
+    h1.basket__title Проверьте товары в корзине № 0738-2344
+    .basket__inner
+      .basket__list
+        .basket__item#product-1
+          .basket__item-remove(data-popup-open="delete-product")
+            span Удалить
+            +icon('close','basket__item-remove-icon')
+          .basket__item-main 
+            .basket__item-img
+              img(data-src="images/basket/1.webp" alt="img").lozad
+            .basket__item-content
+              .basket__item-descr 
+                | Сервиз чайно-кофейный с золотым цветочным декором на 4 персоны (19 предметов), фарфор, кобальт, золочение, Weimar Porzellan (Веймарский фарфор), Германия, 1975-1991 гг.
+              .counter
+                .counter__inner
+                  .counter__item.counter__minus
+                    +icon('minus','counter__icon')
+                  .counter__item.counter__value 1
+                  .counter__item.counter__plus
+                    +icon('plus','counter__icon')
+                .counter__price 
+                  span 350 000
+                  | &nbsp;₽
+        .basket__item#product-2
+          .basket__item-remove(data-popup-open="delete-product")
+            span Удалить
+            +icon('close','basket__item-remove-icon')
+          .basket__item-main 
+            .basket__item-img
+              img(data-src="images/basket/1.webp" alt="img").lozad
+            .basket__item-content
+              .basket__item-descr 
+                | Сервиз чайно-кофейный с золотым цветочным декором на 4 персоны (19 предметов), фарфор, кобальт, золочение, Weimar Porzellan (Веймарский фарфор), Германия, 1975-1991 гг.
+              .counter
+                .counter__inner
+                  .counter__item.counter__minus
+                    +icon('minus','counter__icon')
+                  .counter__item.counter__value 1
+                  .counter__item.counter__plus
+                    +icon('plus','counter__icon')
+                .counter__price 
+                  span 639
+                  | &nbsp;₽
+      .basket__checkout(data-scroll-target="order-form")
+        h2.basket__checkout-title
+          | Оформление заказа
+        .basket__price
+          .basket__price-title
+            | Сумма заказа
+          .basket__price-main
+            .basket__price-sum
+              span 0 
+              | &nbsp;₽
+            .basket__price-count
+              | товаров: 0 шт.
+        .basket__form 
+          form.form(action='/' class="order-form")
+            .form__item
+              label.form__label Ваш номер телефона
+              .form__field
+                .form__required обязательное
+                input(type="tel" class="form__input" name="phone" placeholder="+7 ___ ___-__-__")
+            .form__item
+              .form__field
+                .form__required обязательное
+                input(type="email" class="form__input" name="email" placeholder="E-mail")
+            .form__item
+              input(type="text" class="form__input" name="name" placeholder="Имя")
+            .form__item.d-none
+              textarea(name="message" class="form__textarea" placeholder="Оставьте комментарий")
+            .form__leave-comment.js-leave-comment
+              span Оставить комментарий к заказу
+            button(type="submit" class="button button--fill") Подтверждаю заказ
+            .form__agree
+              input(type="checkbox" checked name="agree" id="agree")
+              label(for="agree")
+                +icon('check','form__agree-icon')
+                | Нажимая кнопку "Подтверждаю заказ", я даю согласие на обработку моих персональных данных в соответствии с 
+                a(href="#") 
+                  span Условиями 
+                | и соглашаюсь с 
+                a(href="#")
+                  span Публичной офертой

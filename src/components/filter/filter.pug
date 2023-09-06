@@ -1,0 +1,215 @@
+.filter
+  .filter__item
+    .filter__top 
+      | Цена
+    .filter__body
+      .filter__price
+        .sliderRange
+        .priceRange
+          .priceRange__item
+            span от
+            input(type="number" min="0" value="0" max="99999999" class="priceRange__input priceRange__min" name="min")
+          .priceRange__item
+            span до
+            input(type="number" value="150000" min="0" max="99999999" class="priceRange__input priceRange__max" name="max")
+  .filter__item.filter__limit
+    .filter__top 
+      | Материал
+    .filter__body
+      .filter__checkbox 
+        input(type="checkbox" name="material" id="material")
+        label(for="material")
+          +icon('check','filter__checkbox-icon')
+          | Фарфор
+      .filter__checkbox 
+        input(type="checkbox" name="material1" id="material1")
+        label(for="material1")
+          +icon('check','filter__checkbox-icon')
+          | Стекло
+      .filter__checkbox 
+        input(type="checkbox" name="material2" id="material2")
+        label(for="material2")
+          +icon('check','filter__checkbox-icon')
+          | Нержавеющая сталь
+      .filter__checkbox 
+        input(type="checkbox" name="material3" id="material3")
+        label(for="material3")
+          +icon('check','filter__checkbox-icon')
+          | Мельхиор
+      .filter__checkbox 
+        input(type="checkbox" name="material4" id="material4")
+        label(for="material4")
+          +icon('check','filter__checkbox-icon')
+          | Фаянс
+    .filter__view-all Посмотреть все
+  .filter__item.filter__limit
+    .filter__top 
+      | Страна-изготовитель
+    .filter__body
+      .filter__checkbox 
+        input(type="checkbox" name="country" id="country")
+        label(for="country")
+          +icon('check','filter__checkbox-icon')
+          | Россия
+      .filter__checkbox 
+        input(type="checkbox" name="country1" id="country1")
+        label(for="country1")
+          +icon('check','filter__checkbox-icon')
+          | Китай
+      .filter__checkbox 
+        input(type="checkbox" name="country2" id="country2")
+        label(for="country2")
+          +icon('check','filter__checkbox-icon')
+          | Германия
+      .filter__checkbox 
+        input(type="checkbox" name="country3" id="country3")
+        label(for="country3")
+          +icon('check','filter__checkbox-icon')
+          | Италия
+      .filter__checkbox 
+        input(type="checkbox" name="country4" id="country4")
+        label(for="country4")
+          +icon('check','filter__checkbox-icon')
+          | Швеция
+      .filter__checkbox 
+        input(type="checkbox" name="country5" id="country5")
+        label(for="country5")
+          +icon('check','filter__checkbox-icon')
+          | Нидерланды
+    .filter__view-all Посмотреть все
+  .dropdown
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Год
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="year" id="year")
+          label(for="year")
+            +icon('check','filter__checkbox-icon')
+            | 2000
+        .filter__checkbox 
+          input(type="checkbox" name="year1" id="year1")
+          label(for="year1")
+            +icon('check','filter__checkbox-icon')
+            | 2010
+        .filter__checkbox 
+          input(type="checkbox" name="year2" id="year2")
+          label(for="year2")
+            +icon('check','filter__checkbox-icon')
+            | 2018
+        .filter__checkbox 
+          input(type="checkbox" name="year3" id="year3")
+          label(for="year3")
+            +icon('check','filter__checkbox-icon')
+            | 2022
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Объем, мл
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="volume" id="volume")
+          label(for="volume")
+            +icon('check','filter__checkbox-icon')
+            | 50
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Персон
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="person" id="person")
+          label(for="person")
+            +icon('check','filter__checkbox-icon')
+            | Мужчина
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Сюжет
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="plot" id="plot")
+          label(for="plot")
+            +icon('check','filter__checkbox-icon')
+            | Драма
+        .filter__checkbox 
+          input(type="checkbox" name="plot1" id="plot1")
+          label(for="plot1")
+            +icon('check','filter__checkbox-icon')
+            | Триллер
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Бренд
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="brend" id="brend")
+          label(for="brend")
+            +icon('check','filter__checkbox-icon')
+            | Nike
+        .filter__checkbox 
+          input(type="checkbox" name="brend1" id="brend1")
+          label(for="brend1")
+            +icon('check','filter__checkbox-icon')
+            | Reebok
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Стиль
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="style" id="style")
+          label(for="style")
+            +icon('check','filter__checkbox-icon')
+            | Классика
+        .filter__checkbox 
+          input(type="checkbox" name="style1" id="style1")
+          label(for="style1")
+            +icon('check','filter__checkbox-icon')
+            | Модерн
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Для еды/напитков
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="food" id="food")
+          label(for="food")
+            +icon('check','filter__checkbox-icon')
+            | Кола
+        .filter__checkbox 
+          input(type="checkbox" name="food1" id="food1")
+          label(for="food1")
+            +icon('check','filter__checkbox-icon')
+            | Сникерс
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Особенности
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="features" id="features")
+          label(for="features")
+            +icon('check','filter__checkbox-icon')
+            | Дорогое
+        .filter__checkbox 
+          input(type="checkbox" name="features1" id="features1")
+          label(for="features1")
+            +icon('check','filter__checkbox-icon')
+            | Свежее
+    .dropdown__item.collapse
+      .dropdown__top.collapse__top
+        | Цвет
+        +icon('arrow-down','dropdown__icon')
+      .dropdown__body.collapse__body
+        .filter__checkbox 
+          input(type="checkbox" name="color" id="color")
+          label(for="color")
+            +icon('check','filter__checkbox-icon')
+            | Сине-зеленый
+        .filter__checkbox 
+          input(type="checkbox" name="color1" id="color1")
+          label(for="color1")
+            +icon('check','filter__checkbox-icon')
+            | Желтый

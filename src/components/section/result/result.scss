@@ -1,0 +1,72 @@
+.result {
+  padding: 70px 0 120px;
+  @include media(600px) { padding: 25px 0 80px; }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+    row-gap: 80px;
+    padding-bottom: 45px;
+    @include media(960px) { 
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+      row-gap: 50px;
+    }
+    @include media(600px) { 
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+      padding-bottom: 25px;
+    }
+  }
+  &__top {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    @include media(960px) { margin-bottom: 20px; }
+  }
+  &__name {
+    font-size: 25px;
+    font-weight: 500;
+    @include media(960px) { font-size: 20px; }
+  }
+}
+
+.resultCircle {
+  padding-top: 45px;
+  @include media(600px) { padding-top: 25px; }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    @include media(1200px) { grid-template-columns: repeat(3, 1fr); }
+    @include media(960px) { grid-template-columns: repeat(2, 1fr); }
+    @include media(769px) { grid-template-columns: 1fr; gap: 10px; }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-radius: 100px;
+    border: 1px solid var(--gray);
+    padding: 10px 20px 10px 10px;
+  }
+  &__img {
+    @include size(90px);
+    overflow: hidden;
+    border-radius: 100%;
+    flex: 0 0 auto;
+    @include media(769px) {
+      @include size(70px);
+    }
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  &__category {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray);
+  }
+}

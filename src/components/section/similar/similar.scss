@@ -1,0 +1,4 @@
+.similar {
+  padding: 60px 0 140px;
+  @include media(769px) { padding-bottom: 80px; }
+}

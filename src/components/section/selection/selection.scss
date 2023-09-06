@@ -1,0 +1,36 @@
+.selection {
+  padding: 60px 0 70px;
+  background-color: var(--blue);
+  &__title {
+    margin-bottom: 70px;
+    @include media(960px) { margin-bottom: 50px; }
+    @include media(769px) { margin-bottom: 30px; }
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 70px;
+    column-gap: 50px;
+    @include media(960px) {
+      row-gap: 50px;
+      column-gap: 20px;
+    }
+    @include media(769px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(481px) {
+      row-gap: 25px;
+      column-gap: 10px;
+    }
+  }
+  &__top {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    img { width: 100%; }
+    margin-bottom: 30px;
+    @include media(960px) { margin-bottom: 10px; }
+    @include media(481px) { border-radius: 10px; }
+  }
+  &__body { @include media(481px) {font-size: 14px; } }
+}

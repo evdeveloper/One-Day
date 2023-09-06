@@ -1,5 +1,4 @@
-import './go-top/go-top'
-import imageLazy from './image-lazy/image-lazy'
-import './bootstrap/bootstrap'
+// import './go-top/go-top'
+// import imageLazy from './image-lazy/image-lazy'
 
-imageLazy.init()
+// imageLazy.init()

@@ -1,0 +1,19 @@
+.text-center { text-align: center; }
+
+.default {
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__more {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: opacity .3s;
+    color: var(--black);
+    margin-top: 12px;
+    span { border-bottom: 1px solid; }
+    @include media-min(769px) {
+      &:hover { opacity: 0.5; }
+    }
+  }
+}

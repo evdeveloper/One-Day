@@ -1,0 +1,13 @@
+extends base/pug/base
+
+block variables
+  - var title = 'Популярные запросы'
+  - var pageClass = 'requests-page'
+  - var baseDir = './';
+
+
+
+block content
+  include ../src/components/breadcrumbs/breadcrumbs
+  include ../src/components/section/requests/requests
+  include ../src/components/section/articles/articles

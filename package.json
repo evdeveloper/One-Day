@@ -1,5 +1,5 @@
 {
-  "name": "gulp-pack",
+  "name": "gulp-webpack-pug",
   "version": "1.0.0",
   "description": "My starter project for web development",
   "main": "gulpfile.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zaurmag/gulp-pack.git"
+    "url": ""
   },
   "keywords": [
     "gulp",
@@ -70,16 +70,19 @@
     "gulp-zip": "latest",
     "gulp.spritesmith": "latest",
     "node-sass": "latest",
+    "pug-inheritance": "^3.0.0-beta.2",
     "vinyl-ftp": "latest",
     "webpack": "latest",
     "webpack-stream": "latest",
     "yargs": "latest"
   },
   "dependencies": {
-    "bootstrap": "5.2.0",
     "enquire.js": "latest",
-    "inputmask": "latest",
+    "imask": "^7.1.3",
+    "just-validate": "^4.2.0",
     "lozad": "^1.16.0",
-    "svg4everybody": "latest"
+    "normalize-scss": "^7.0.1",
+    "nouislider": "^15.7.1",
+    "swiper": "^10.2.0"
   }
 }
