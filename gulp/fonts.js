@@ -1,4 +1,4 @@
-let path = require('./path/path.js')
+const path = require('./path/path.js')
 module.exports = function () {
 	$.gulp.task('fonts:build', (done) => {
 		$.gulp.src(path.path.src.fonts)

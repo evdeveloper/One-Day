@@ -1,12 +1,14 @@
 module.exports = {
 	path: {
-		build: { // Build files
+		build: {
 			root: 'dist/',
-			style: 'dist/css',
-			img: 'dist/images',
-			imgFavicons: 'dist/images/favicons',
-			js: 'dist/js',
-			fonts: 'dist/fonts',
+			page: 'dist/company',
+			style: 'dist/static/css',
+			img: 'dist/static/images',
+			resources: 'dist/static/',
+			imgFavicons: 'dist/static/images/favicons',
+			js: 'dist/static/js',
+			fonts: 'dist/static/fonts',
 			zip: 'zip'
 		},
 		src: {

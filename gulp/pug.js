@@ -2,7 +2,7 @@ let path = require('./path/path.js')
 let fs = require('fs')
 let emittyPug = null
 
-module.exports = function () {
+module.exports = function() {
 	if (!emittyPug) {
 		emittyPug = $.plugins.emitty.setup('src', 'pug', { makeVinylFile: true })
 	}
@@ -17,7 +17,7 @@ module.exports = function () {
 					.pipe($.plugins.pug({
 						pretty: !$.yargs.minifyHtml
 					}))
-					.pipe($.gulp.dest(path.path.build.root))
+					.pipe($.gulp.dest(path.path.build.page))
 					.on('end', () => {
 						$.browserSync.reload()
 						resolve()

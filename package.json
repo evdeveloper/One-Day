@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp default",
-    "minify": "gulp pug:build style:build js:build --minify true",
+    "build": "gulp pug:build style:build resources:build fonts:build spriteSvg:build img:build js:build --minify true",
     "minifyHtml": "gulp pug:build --minify-html true",
     "minifyJs": "gulp js:build --minify-js true",
     "minifyCss": "gulp style:build --minify-css true",

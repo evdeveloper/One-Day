@@ -1,9 +1,9 @@
-extends base/pug/base
+extends base/pug/main
 
 append variables
   - var title = 'Карточка товара'
   - var pageClass = 'card-page'
-  - var baseDir = './';
+  - var baseDir = '../static';
 
 block content
   include ../src/components/breadcrumbs/breadcrumbs

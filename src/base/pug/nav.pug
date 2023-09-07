@@ -1,0 +1,49 @@
+block variables
+
+doctype html
+html(lang="ru-RU")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    <!--[if IE]>
+    meta(http-equiv='X-UA-Compatible', content="IE = edge")
+    <![endif]-->
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    meta(name="color-theme" content="")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" type='text/css' href=`${baseDir}/css/main.css`)
+
+    <!--[if lt IE 9]>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+    <![endif]-->
+  body(class=pageClass)
+    style.
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 20px;
+        padding: 30px;
+      }
+      body {
+        background-color: #ededff;
+      }
+      a {
+        color: black;
+        font-size: 24px;
+        text-decoration: none;
+      }
+    .nav
+      a(href="../company/home.html" target="_blank") Главная страница 
+      a(href="../company/catalog.html" target="_blank") Каталог 
+      a(href="../company/basket.html" target="_blank") Корзина 
+      a(href="../company/completed.html" target="_blank") Заказ оформлен 
+      a(href="../company/result.html" target="_blank") Выбор по особенностям 
+      a(href="../company/card.html" target="_blank") Карточка товара 
+      a(href="../company/requests.html" target="_blank") Популярные запросы 
+
+    block script

@@ -10,7 +10,7 @@
   right: 25px;
   cursor: pointer;
   padding: 3px 2px;
-  background: url('../../img/heart-core.svg') no-repeat;
+  background: url('../img/heart-core.svg') no-repeat;
   @include media(481px) { top: 15px; right: 15px; }
   &__icon {
     @include size(100%);

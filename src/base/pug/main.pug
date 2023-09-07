@@ -1,6 +1,6 @@
 include ../pug/utils/mixins
 block variables
-  - var baseDir = './';
+  - var baseDir = '../static';
 
 doctype html
 html(lang="ru-RU")
@@ -17,7 +17,7 @@ html(lang="ru-RU")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet")
-    link(rel="stylesheet" type='text/css' href="./css/main.css")
+    link(rel="stylesheet" type='text/css' href=`${baseDir}/css/main.css`)
 
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
@@ -107,17 +107,17 @@ html(lang="ru-RU")
         .swiper.popupGallery
           .popupGallery__inner.swiper-wrapper
             .popupGallery__slide.swiper-slide
-              img(data-src="images/popup/1.webp" alt="img").lozad
+              img(data-src=`${baseDir}/images/popup/1.webp` alt="img").lozad
             .popupGallery__slide.swiper-slide
-              img(data-src="images/popup/1.webp" alt="img").lozad
+              img(data-src=`${baseDir}/images/popup/1.webp` alt="img").lozad
             .popupGallery__slide.swiper-slide
-              img(data-src="images/popup/1.webp" alt="img").lozad
+              img(data-src=`${baseDir}/images/popup/1.webp` alt="img").lozad
             .popupGallery__slide.swiper-slide
-              img(data-src="images/popup/1.webp" alt="img").lozad
+              img(data-src=`${baseDir}/images/popup/1.webp` alt="img").lozad
             .popupGallery__slide.swiper-slide
-              img(data-src="images/popup/1.webp" alt="img").lozad
+              img(data-src=`${baseDir}/images/popup/1.webp` alt="img").lozad
             .popupGallery__slide.swiper-slide
-              img(data-src="images/popup/1.webp" alt="img").lozad
+              img(data-src=`${baseDir}/images/popup/1.webp` alt="img").lozad
           .swiper-pagination.popupGallery__pagination
       .popupGallery__prev.popupGallery__arrow
         +icon('arrow-left','popupGallery__icon')
@@ -144,5 +144,5 @@ html(lang="ru-RU")
         button(type="button" class="button button-buy button--fill js-add-basket")
           +icon('basket-bold','button-buy__icon')
           span В корзину
-    script(src="./js/main.js")
+    script(src=`${baseDir}/js/main.js`)
     block script
