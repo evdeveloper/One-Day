@@ -93,29 +93,3 @@
   &__price { font-size: 14px; }
   &__like { right: 20px; }
 }
-
-.fixed-mobile-block {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
-  display: none;
-  gap: 10px;
-  transition: opacity .3s;
-  background-color: var(--white);
-  box-shadow: 0px -5px 7px -6px rgba(0, 0, 0, 0.25);
-  @include media(481px) { display: flex; }
-}
-
-.confirm-order {
-  padding: 20px 40px;
-  @include media(415px) { padding: 20px; }
-}
-
-.card-mobile-button {
-  padding: 20px;
-  .button { padding: 0 10px; }
-  &.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
-  @include media(415px) { padding: 20px 10px; }
-}

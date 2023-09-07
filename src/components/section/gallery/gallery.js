@@ -1,4 +1,5 @@
-import { wordCounter } from '../../wordCounter/wordCounter'
+import { wordCounter } from '../../wordCounter/wordCounter';
+import enquire from 'enquire.js';
 
 (() => {
   const gallery = document.querySelector('.galleryCard');
@@ -22,5 +23,11 @@ import { wordCounter } from '../../wordCounter/wordCounter'
       galleryImages[counter - 1].style.display = 'block';
       if(!galleryConter) { _self.remove(); }
     } 
+  });
+
+  enquire.register("screen and (max-width:481px)", {
+    match: function() {
+      document.querySelectorAll('.galleryCard__item')?.forEach(slide => slide.removeAttribute('data-popup-open'));
+    }
   });
 })();

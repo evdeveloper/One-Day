@@ -102,8 +102,27 @@ import { Navigation, Pagination } from 'swiper/modules';
     });
   });
 
+  // Swiper popupGallery
+  const popupGallery = document.querySelector('.popupGallery');
+  const popupGallerySwiper = new Swiper(popupGallery, {
+    slidesPerView: 'auto',
+    modules: [Navigation, Pagination],
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+      renderFraction: function(currentClass, totalClass) { 
+        return `Фото <span class="${currentClass}"></span> из <span class="${totalClass}"></span>`; 
+      }
+    },
+    navigation: {
+      nextEl: '.popupGallery__next',
+      prevEl: '.popupGallery__prev',
+    },
+  });
+
   // Swiper Group galleryCard
   const galleryCard = document.querySelectorAll('.galleryCard');
+  const gallerySlide = document.querySelectorAll('.galleryCard__item');
   galleryCard.forEach(slider => {
     const sliderGallery = new Swiper(slider, {
       slidesPerView: 'auto',
@@ -119,28 +138,12 @@ import { Navigation, Pagination } from 'swiper/modules';
         481: { enabled: false }
       }
     });
-  });
-
-  // Swiper popupGallery
-  const popupGallery = document.querySelectorAll('.popupGallery');
-  popupGallery.forEach((slider, index) => {
-    new Swiper(slider, {
-      slidesPerView: 'auto',
-      modules: [Navigation, Pagination],
-      pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-        renderFraction: function(currentClass, totalClass) { 
-          return `Фото <span class="${currentClass}"></span> из <span class="${totalClass}"></span>`; 
-        }
-      },
-      navigation: {
-        nextEl: '.popupGallery__next',
-        prevEl: '.popupGallery__prev',
-      },
-      
+    gallerySlide.forEach(slide => {
+      slide.addEventListener('click', function() {
+        const index = [...this.parentElement.children].indexOf(this);
+        popupGallerySwiper.slideTo(index);
+      });
     });
-    
   });
 
 })();

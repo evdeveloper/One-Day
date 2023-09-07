@@ -1,5 +1,5 @@
-import enquire from 'enquire.js'
-import { overlayAdd, overlayRemove } from '../overlay/overlay'
+import enquire from 'enquire.js';
+import { overlayAdd, overlayRemove } from '../overlay/overlay';
 
 const hamburger = document.querySelector('.hamburger')
 const mobileMenu = document.querySelector('.mobileMenu');

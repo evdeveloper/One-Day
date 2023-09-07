@@ -204,7 +204,7 @@
     img { 
       height: 100%; 
       margin: 0 auto;
-      @include media(481px) { height: auto; }
+      @include media(769px) { height: auto; }
     }
   }
   &__prev { left: 5px; }

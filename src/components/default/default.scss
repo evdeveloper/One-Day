@@ -4,6 +4,15 @@
   &__title {
     margin-bottom: 20px;
   }
+  &__counter {
+    display: none;
+    @include media(481px) {
+      display: inline-block;
+      font-size: 14px;
+      margin: 0 10px;
+      color: var(--gray);
+    }
+  }
   &__more {
     display: flex;
     justify-content: center;

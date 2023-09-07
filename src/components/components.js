@@ -11,3 +11,4 @@ import './dropdown/dropdown';
 import './section/basket/basket';
 import './section/gallery/gallery';
 import './filter/filter';
+import './card/card';

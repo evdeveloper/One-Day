@@ -68,6 +68,7 @@
   &__agree {
     margin-top: 16px;
     user-select: none;
+    pointer-events: none;
     &-icon {
       position: absolute;
       left: 3px;
@@ -91,6 +92,7 @@
         line-height: 120%;
         a { 
           color: var(--gray);
+          pointer-events: all;
           span { border-bottom: 1px solid; }
         }
         &:before {

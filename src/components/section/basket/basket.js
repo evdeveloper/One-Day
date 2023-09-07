@@ -2,6 +2,8 @@ import { counterReplace } from '../../counterReplace/counterReplace';
 import { closeModal } from '../../popup/popup';
 
 const basket = document.querySelector('.basket');
+const orderModal = document.querySelector('.confirm-order');
+const orderForm = document.querySelector('.order-form');
 
 export function basketObserverCounter() {
   let arrNumber = [];
@@ -18,6 +20,21 @@ export function basketProductConter() {
   товаров: ${basket.querySelectorAll('.basket__item').length} шт.
   `;
   if(!basket.querySelectorAll('.basket__item').length) basket.querySelector('.basket__price-sum span').textContent = 0;
+}
+
+if(orderModal) {
+  const buyObserver = new IntersectionObserver(
+    ([entry]) => {
+      const equi = entry.target || {};
+      if (!entry.isIntersecting || entry.intersectionRatio <= 0.2) {
+        orderModal.classList.add('active');
+      } else {
+        orderModal.classList.remove('active');
+      }
+    },
+    { threshold: [0.2] }
+  );
+  buyObserver.observe(orderForm);
 }
 
 (() => {
