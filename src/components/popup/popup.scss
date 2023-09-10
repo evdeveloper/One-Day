@@ -83,6 +83,9 @@
       background-color: transparent;
     }
   }
+  &#{$this}-gallery {
+    #{$this}__content { max-width: 100%; }
+  }
   &__inner {
     display: flex;
   }
@@ -217,11 +220,7 @@
     align-items: center;
     max-width: 1000px; 
     user-select: none; 
-    img { 
-      height: 100%; 
-      margin: 0 auto;
-      @include media(769px) { height: auto; }
-    }
+    img { margin: 0 auto; }
   }
   &__prev { left: 5px; }
   &__next { right: 5px; }
