@@ -84,7 +84,7 @@
     }
   }
   &#{$this}-gallery {
-    #{$this}__content { max-width: 100%; }
+    #{$this}__content { max-width: 1000px; }
   }
   &__inner {
     display: flex;

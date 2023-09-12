@@ -5,43 +5,63 @@ section.pageCard
         .swiper.galleryCard
           .swiper-wrapper.galleryCard__inner
             .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/1.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/1.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/1.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/2.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/2.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/2.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/3.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/3.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/3.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/4.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/4.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/4.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/4.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/2.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/2.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/3.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/3.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/1.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/1.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/2.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/2.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
             .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              img(data-src=`${baseDir}/images/card/4.webp` alt="img").lozad
+              picture
+                source(srcset=`${baseDir}/images/card/3.webp` type="image/webp")
+                img(data-src=`${baseDir}/images/card/3.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
           .swiper-pagination
@@ -195,19 +215,25 @@ section.pageCard
       .resultCircle__inner
         a(href="#").resultCircle__item
           .resultCircle__img
-            img(data-src=`${baseDir}/images/material/small/1.webp` alt="img").lozad
+            picture
+              source(srcset=`${baseDir}/images/material/small/1.webp` type="image/webp")
+              img(data-src=`${baseDir}/images/material/small/1.jpg` alt="img").lozad
           .resultCircle__main
             span Бронзирование
             .resultCircle__category Подкатегория
         a(href="#").resultCircle__item
           .resultCircle__img
-            img(data-src=`${baseDir}/images/material/small/2.webp` alt="img").lozad
+            picture
+              source(srcset=`${baseDir}/images/material/small/2.webp` type="image/webp")
+              img(data-src=`${baseDir}/images/material/small/2.jpg` alt="img").lozad
           .resultCircle__main
             span Глазурь
             .resultCircle__category Бренд
         a(href="#").resultCircle__item
           .resultCircle__img
-            img(data-src=`${baseDir}/images/material/small/3.webp` alt="img").lozad
+            picture
+              source(srcset=`${baseDir}/images/material/small/3.webp` type="image/webp")
+              img(data-src=`${baseDir}/images/material/small/3.jpg` alt="img").lozad
           .resultCircle__main
             span Пластик, краска
             .resultCircle__category Раздел

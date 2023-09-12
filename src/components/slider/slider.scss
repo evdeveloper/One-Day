@@ -10,7 +10,8 @@
     padding-left: 40px;
     margin-left: -8px;
   }
-  &__slide { 
+  &__slide {
+    max-width: 312px;
     color: var(--black);
     @include media-min(769px) {
       &:hover {
@@ -25,7 +26,14 @@
     position: relative;
     border-radius: 30px;
     overflow: hidden;
-    img { width: 100%; transition: all .5s; }
+    padding-bottom: 100%;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include size(100%);
+      transition: all .5s;
+    }
   }
   &__name {
     font-size: 25px;

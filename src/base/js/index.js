@@ -7,8 +7,13 @@ const formMessages = document.querySelectorAll('.form__textarea');
 const header = document.querySelector('.header');
 const catalogMenu = header.querySelector('.catalogMenu');
 const basket = document.querySelector('.basket');
-const observer = lozad();
+
+const observer = lozad('.lozad', {
+  rootMargin: '20px 0px',
+  threshold: 0.4
+});
 observer.observe();
+
 
 if(basket) {
   basketObserverCounter();
