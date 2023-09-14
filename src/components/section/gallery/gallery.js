@@ -3,12 +3,13 @@ import enquire from 'enquire.js';
 
 (() => {
   const gallery = document.querySelector('.galleryCard');
-  const galleryImages = gallery?.querySelectorAll('.galleryCard__item');
+  const galleryPopup = document.querySelector('.popupGallery');
+  const galleryPopupSlides = galleryPopup?.querySelectorAll('.popupGallery__slide');
   let counterShowGallery = 4;
-  let galleryConter = galleryImages?.length - counterShowGallery;
+  let galleryConter = galleryPopupSlides?.length - counterShowGallery;
   let counter = counterShowGallery;
   if(gallery) {
-    if(galleryImages?.length > counterShowGallery) {
+    if(galleryPopupSlides?.length > counterShowGallery) {
       gallery.querySelector('.js-gallery-upload').textContent = `Смотреть ещё ${galleryConter} ${wordCounter(galleryConter, ['фотографию', 'фотографии', 'фотографий'])}`;
     } else {
       gallery.querySelector('.js-gallery-upload').remove();
@@ -20,7 +21,6 @@ import enquire from 'enquire.js';
       counter++;
       galleryConter--;
       _self.textContent = `Смотреть ещё ${galleryConter} ${wordCounter(galleryConter, ['фотографию', 'фотографии', 'фотографий'])}`;
-      galleryImages[counter - 1].style.display = 'block';
       if(!galleryConter) { _self.remove(); }
     } 
   });

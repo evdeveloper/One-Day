@@ -28,7 +28,6 @@ export function smoothScroll(eID) {
   if (stopY > startY) {
     for (let i=startY; i < stopY; i+=step ) {
       setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-      console.log(stopY);
       leapY += step; if (leapY > stopY) leapY = stopY; timer++;
     } return;
   }

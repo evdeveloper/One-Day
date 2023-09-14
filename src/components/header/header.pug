@@ -17,10 +17,10 @@ header.header
         include ../search/search
         .counterLink
           a(href="#" title="Понравившиеся").counterLink__item
-            .counterLink__count 10
+            .counterLink__count.js-counterLink-favorite 0
             +icon('heart','counterLink__icon')
           a(href="#" title="В корзине").counterLink__item
-            .counterLink__count 2
+            .counterLink__count.js-counterLink-basket 0
             +icon('basket','counterLink__icon')
       nav.main-nav
         ul.main-nav__list
@@ -150,8 +150,8 @@ header.header
             +icon('search', 'search__icon')
     .counterLink
       a(href="#" title="Понравившиеся").counterLink__item
-        .counterLink__count 10
+        .counterLink__count.js-counterLink-favorite 0
         +icon('heart','counterLink__icon')
       a(href="#" title="В корзине").counterLink__item
-        .counterLink__count 2
+        .counterLink__count.js-counterLink-basket 0
         +icon('basket','counterLink__icon')

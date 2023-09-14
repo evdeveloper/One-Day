@@ -111,7 +111,7 @@
     max-width: 650px;
     left: 50%;
     top: 50%;
-    background-color: var(--blue);
+    background-color: var(--white);
     padding: 64px 40px 60px;
     z-index: 1100;
     opacity: 0;
@@ -194,7 +194,6 @@
 .popupGallery {
   max-width: 1000px;
   height: 100vh;
-  padding: 20px 0;
   &__arrow {
     display: flex;
     align-items: center;
@@ -220,7 +219,7 @@
     align-items: center;
     max-width: 1000px; 
     user-select: none; 
-    img { margin: 0 auto; }
+    img { margin: 0 auto; height: 100%; }
   }
   &__prev { left: 5px; }
   &__next { right: 5px; }

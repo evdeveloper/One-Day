@@ -56,9 +56,9 @@
     line-height: 140%;
     font-family: var(--nunito-font);
     font-weight: 400;
-    a { 
-      color: var(--black);
+    a {
       transition: opacity .3s;
+      font-family: var(--base-font);
       span { border-bottom: 1px solid; }
       @include media-min(769px) {
         &:hover { opacity: 0.5; }

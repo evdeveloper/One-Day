@@ -3,6 +3,7 @@ import { openModal, closeModal } from '../../../src/components/popup/popup';
 import { smoothScroll } from '../../../src/components/smoothScroll/smoothScroll';
 import { basketObserverCounter, basketProductConter } from '../../../src/components/section/basket/basket';
 
+const body = document.querySelector('body');
 const formMessages = document.querySelectorAll('.form__textarea');
 const header = document.querySelector('.header');
 const catalogMenu = header.querySelector('.catalogMenu');
@@ -14,6 +15,11 @@ const observer = lozad('.lozad', {
 });
 observer.observe();
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal(document.querySelector('.popup.show').getAttribute('data-popup-target'));
+  }
+});
 
 if(basket) {
   basketObserverCounter();
@@ -73,8 +79,6 @@ document.addEventListener('click', e => {
     document.querySelector('form.order-form > button[type="submit"]')?.click();
   }
 });
-
-
 
 // Vendor
 import '../../vendor/vendor'

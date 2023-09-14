@@ -4,7 +4,8 @@ import { fadeIn, fadeOut } from '../fade/fade';
 
 (() => {
   document.querySelectorAll('form').forEach(form => {
-    const validateForm = new JustValidate(form, { 
+    const validateForm = new JustValidate(form, {
+      validateBeforeSubmitting: true,
       errorLabelStyle: { color: "#D44444" },
       errorLabelCssClass: ['form__invalid'],
       errorFieldCssClass: ['form__error'],
@@ -29,16 +30,15 @@ import { fadeIn, fadeOut } from '../fade/fade';
       }
       if(phoneValidate) {
         validateForm.addField('input[type="tel"]', [
+          {rule: 'customRegexp', value: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/gi, errorMessage: "мин. 11 цифр"},
           {rule: "required", errorMessage: "введите телефон"},
-          {rule: "minLength", value: 16, errorMessage: "мин. 11 цифр"}
+          {rule: "minLength", value: 16, errorMessage: "мин. 11 цифр"} 
         ]);
       }
       validateForm.onValidate(onValidate => {
         if(!onValidate.isValid) {
-          form.querySelectorAll('.form__item').forEach(input => input.classList.add('gap'));
           form.classList.add('form-error');
         } else {
-          form.querySelectorAll('.form__item').forEach(input => input.classList.remove('gap'));
           form.classList.remove('form-error');
         }
       });

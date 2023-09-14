@@ -3,6 +3,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 (() => {
 
+  const buttonOpenGallery = document.querySelector('.js-gallery-upload');
   // Swiper Group
   const swiperGroup = document.querySelectorAll('.swiperGroup');
   swiperGroup.forEach(slider => {
@@ -46,6 +47,7 @@ import { Navigation, Pagination } from 'swiper/modules';
   swiperCard.forEach(slider => {
     const sliderCard = new Swiper(slider, {
       slidesPerView: 'auto',
+      spaceBetween: 0,
       speed: 700,
       modules: [Navigation, Pagination],
       pagination: {
@@ -142,6 +144,11 @@ import { Navigation, Pagination } from 'swiper/modules';
       slide.addEventListener('click', function() {
         const index = [...this.parentElement.children].indexOf(this);
         popupGallerySwiper.slideTo(index);
+      });
+      buttonOpenGallery.addEventListener('click', function(){
+        let numberPattern = /\d+/g;
+        let counter = this.textContent.match(numberPattern).join('');
+        popupGallerySwiper.slideTo(+counter - 1);
       });
     });
   });

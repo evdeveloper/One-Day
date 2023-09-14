@@ -1,4 +1,6 @@
 .selection {
+  $this: &;
+
   padding: 60px 0 70px;
   background-color: var(--blue);
   &__title {
@@ -21,6 +23,19 @@
     @include media(481px) {
       row-gap: 25px;
       column-gap: 10px;
+    }
+  }
+  &__item {
+    .like {
+      opacity: 0;
+      pointer-events: none;
+      @include media(481px) { opacity: 1; pointer-events: all; }
+    }
+    &:hover {
+      .like {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
   &__top {

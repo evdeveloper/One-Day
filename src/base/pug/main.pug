@@ -16,9 +16,8 @@ html(lang="ru-RU")
     meta(name="color-theme" content="")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet")
-    link(rel="stylesheet" type='text/css' href=`${baseDir}/css/main.css`)
-
+    link(href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet")
+    link(rel="stylesheet" type='text/css' href=`${baseDir}/css/main.css?ver='${Math.random()}'`)
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
     <![endif]-->
@@ -37,7 +36,7 @@ html(lang="ru-RU")
           +icon('close','popup__close-icon')
         .popup__title 
           | Купить в 1 клик
-        form.popup__form(action='/')
+        form.form.popup__form(action='/')
           .popup__form-inner
             .form__item
               label.form__label Ваш номер телефона
@@ -72,9 +71,9 @@ html(lang="ru-RU")
             span г.Москва, 
             | ул. Краснопролетарская, д.7
           .popup__address-item
-            span Работаем ежедневно 
-            | с 11:00 до 20:00 (необязательно)
-        form.popup__form(action='/')
+            span Работаем ежедневно
+            | с 11:00 до 20:00
+        form.form.popup__form(action='/')
           .popup__form-inner
             .form__item
               label.form__label 
@@ -182,4 +181,25 @@ html(lang="ru-RU")
           +icon('basket-bold','button-buy__icon')
           span В корзину
     script(src=`${baseDir}/js/main.js`)
+    script.
+      setTimeout(() => {
+        let GTMObject = document.createElement("script");
+        GTMObject.src = 'https://www.googletagmanager.com/gtag/js?id=UA-226564787-1';
+        GTMObject.async = true;
+        document.getElementsByTagName('head')[0].appendChild(GTMObject);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-226564787-1');
+      }, 5000);
+      setTimeout(() => {
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(88453227, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+      }, 5000);
+    noscript
+      img(src="https://mc.yandex.ru/watch/88453227" style="position:absolute; left:-9999px;")
     block script

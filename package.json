@@ -69,6 +69,8 @@
     "gulp-webp": "^4.0.1",
     "gulp-zip": "latest",
     "gulp.spritesmith": "latest",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
     "node-sass": "latest",
     "pug-inheritance": "^3.0.0-beta.2",
     "vinyl-ftp": "latest",

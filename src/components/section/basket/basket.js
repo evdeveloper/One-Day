@@ -4,6 +4,7 @@ import { closeModal } from '../../popup/popup';
 const basket = document.querySelector('.basket');
 const orderModal = document.querySelector('.confirm-order');
 const orderForm = document.querySelector('.order-form');
+const counterBasket = document.querySelector('.js-counterLink-basket');
 
 export function basketObserverCounter() {
   let arrNumber = [];
@@ -19,7 +20,10 @@ export function basketProductConter() {
   basket.querySelector('.basket__price-count').innerHTML = `
   товаров: ${basket.querySelectorAll('.basket__item').length} шт.
   `;
-  if(!basket.querySelectorAll('.basket__item').length) basket.querySelector('.basket__price-sum span').textContent = 0;
+  counterBasket.textContent = `${basket.querySelectorAll('.basket__item').length}`;
+  if(!basket.querySelectorAll('.basket__item').length) {
+    basket.querySelector('.basket__price-sum span').textContent = 0;
+  }
 }
 
 if(orderModal) {
@@ -57,32 +61,29 @@ if(orderModal) {
       }
     }
     if(e.target.closest('.js-add-basket')) {
-      const _self = e.target.closest('.js-add-basket')
-      _self.classList.toggle('button--gold');
-      if(_self.classList.contains('button--gold')) {
-      _self.querySelector('span').textContent = 'В корзине';
-      } else {
-      const parent = _self.parentNode;
-      if(parent.classList.contains('card-mobile-button')) {
-        _self.querySelector('span').textContent = 'В корзину';
-        return false;
-      }
-      _self.querySelector('span').textContent = 'Добавить в корзину';
-      }
+      const _self = e.target.closest('.js-add-basket');
+      document.querySelectorAll('.js-add-basket').forEach(btn => {
+        btn.classList.toggle('button--gold');
+        if(btn.classList.contains('button--gold')) {
+          btn.querySelector('span').textContent = 'В корзине';
+        } else {
+        const parent = btn.parentNode;
+        if(parent.classList.contains('card-mobile-button')) {
+          btn.querySelector('span').textContent = 'В корзину';
+          return false;
+        }
+        btn.querySelector('span').textContent = 'Добавить в корзину';
+        }
+      });
     }
-    if(e.target.closest('.js-basket-product-remove')) {
+    if(e.target.closest('.js-basket-product-remove') || e.target.closest('.js-basket-product-postpone')) {
       e.preventDefault();
-      const _self = e.target.closest('.js-basket-product-remove');
+      const _self = e.target.closest('.js-basket-product-remove') || e.target.closest('.js-basket-product-postpone');
       let productPopupID = _self.closest('.popup').getAttribute('data-product-id');
       document.getElementById(`${productPopupID}`).remove();
       closeModal(e.target.closest('.popup').getAttribute('data-popup-target'));
       basketObserverCounter();
       basketProductConter();
-    }
-    if(e.target.closest('.js-basket-product-postpone')) {
-      e.preventDefault();
-      const _self = e.target.closest('.js-basket-product-postpone');
-      closeModal(e.target.closest('.popup').getAttribute('data-popup-target'));
     }
     if(e.target.closest('.basket__item-remove')) {
       const _self = e.target.closest('.basket__item-remove');

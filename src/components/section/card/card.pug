@@ -1,6 +1,6 @@
 section.pageCard
   .container
-    .pageCard__inner
+    .pageCard__inner(itemscope itemtype="http://schema.org/Product")
       .pageCard__col
         .swiper.galleryCard
           .swiper-wrapper.galleryCard__inner
@@ -28,55 +28,20 @@ section.pageCard
                 img(data-src=`${baseDir}/images/card/4.jpg` alt="img").lozad
               .galleryCard__open
                 +icon('plus-open','galleryCard__icon')
-            .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
-              picture
-                source(srcset=`${baseDir}/images/card/4.webp` type="image/webp")
-                img(data-src=`${baseDir}/images/card/4.jpg` alt="img").lozad
-              .galleryCard__open
-                +icon('plus-open','galleryCard__icon')
-            .swiper-slide.galleryCard__item.galleryCard--full(data-popup-open="gallery")
-              picture
-                source(srcset=`${baseDir}/images/card/2.webp` type="image/webp")
-                img(data-src=`${baseDir}/images/card/2.jpg` alt="img").lozad
-              .galleryCard__open
-                +icon('plus-open','galleryCard__icon')
-            .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              picture
-                source(srcset=`${baseDir}/images/card/3.webp` type="image/webp")
-                img(data-src=`${baseDir}/images/card/3.jpg` alt="img").lozad
-              .galleryCard__open
-                +icon('plus-open','galleryCard__icon')
-            .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              picture
-                source(srcset=`${baseDir}/images/card/1.webp` type="image/webp")
-                img(data-src=`${baseDir}/images/card/1.jpg` alt="img").lozad
-              .galleryCard__open
-                +icon('plus-open','galleryCard__icon')
-            .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              picture
-                source(srcset=`${baseDir}/images/card/2.webp` type="image/webp")
-                img(data-src=`${baseDir}/images/card/2.jpg` alt="img").lozad
-              .galleryCard__open
-                +icon('plus-open','galleryCard__icon')
-            .swiper-slide.galleryCard__item(data-popup-open="gallery")
-              picture
-                source(srcset=`${baseDir}/images/card/3.webp` type="image/webp")
-                img(data-src=`${baseDir}/images/card/3.jpg` alt="img").lozad
-              .galleryCard__open
-                +icon('plus-open','galleryCard__icon')
           .swiper-pagination
-          button(type="button" class="galleryCard__btn button js-gallery-upload")
+          button(type="button" class="galleryCard__btn button js-gallery-upload" data-popup-open="gallery")
             | Смотреть ещё фотографии
       .pageCard__col
-        h1.pageCard__title
+        h1.pageCard__title(itemprop="name")
           | Сервиз чайно-кофейный с золотым цветочным декором на 4 персоны (19 предметов), фарфор, кобальт, золочение, Weimar Porzellan (Веймарский фарфор), Германия, 1975-1991 гг.
         .pageCard__author
           | роспись столика копирует работу английского художника-декоратора 18 века J. Baker
-        .pageCard__fixed
+        .pageCard__fixed(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
           .pageCard__art Артикул: 499563
           .pageCard__wrap
             .pageCard__price
-              | 49 500 ₽
+              span(itemprop="price") 49 500 
+              span(itemprop="priceCurrency") ₽
             .pageCard__count В наличии: 1 шт.
           .pageCard__buy 
             button(type="button" class="button button-buy button--fill js-add-basket")
@@ -95,12 +60,12 @@ section.pageCard
               span Описание предмета
             a(href="#" data-scroll-element="options").infoScroll__link
               span Характеристики
-          .singupGallery
+          .singupGallery(data-popup-open="sign-up")
             .singupGallery__col
               .singupGallery__img
                 +icon('masson')
             .singupGallery__col
-              button(type="submit" class="button button--fill" data-popup-open="sign-up") Записаться
+              button(type="button" class="button button--fill") Записаться
               p на просмотр этого предмета в антикварной галерее в центре Москвы
       .pageCard__col
         .infoProduct
@@ -131,7 +96,7 @@ section.pageCard
                 li.infoProduct__li
                   span 7. Розетка 
                   | - 4шт.
-          .infoProduct__item
+          .infoProduct__item(itemprop="description")
             .infoProduct__title
               | Описание предмета:
             p Редкая статуэтка , относящаяся к серии "Счастливое детство", с авторской подписью. Скульптор Кучкина Таисия Сергеевна (1909г-1942г). Погибла в блокадном Ленинграде. Автор росписи данного экземпляра - Лупанова Елизавета Николаевна Николаевна (1910г-1973г). Аналогичная статуэтка в другой росписи Лупановой Е.Н. хранится в собрании "Государственного Эрмитажа".

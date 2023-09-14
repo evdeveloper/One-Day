@@ -1,5 +1,5 @@
 :root {
-  --base-font: 'CeraPro', sans-serif;
+  --base-font: 'Abel', sans-serif;
   --closer-font: 'CloserText', sans-serif;
   --nunito-font: 'Nunito', sans-serif;
   --base-font-size: 16px;
@@ -19,11 +19,11 @@
 
   // button settings
   --button-height: 42px;
-  --button-font-size: var(--base-font-size);
+  --button-font-size: 14px;
   --button-border: 2px solid var(--black);
   --button-border-radius: 5px;
   --button-font: var(--base-font);
-  --button-font-weight: 700;
+  --button-font-weight: 400;
   --button-color: var(--white);
 }
 
