@@ -291,6 +291,7 @@
   &__item {
     position: relative;
     span { font-weight: 500; }
+    a span { border-bottom: 1px solid; }
     &.question {
       display: flex;
       align-items: center;

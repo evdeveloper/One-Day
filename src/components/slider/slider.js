@@ -125,6 +125,7 @@ import { Navigation, Pagination } from 'swiper/modules';
   // Swiper Group galleryCard
   const galleryCard = document.querySelectorAll('.galleryCard');
   const gallerySlide = document.querySelectorAll('.galleryCard__item');
+  let counter = 3;
   galleryCard.forEach(slider => {
     const sliderGallery = new Swiper(slider, {
       slidesPerView: 'auto',
@@ -145,11 +146,11 @@ import { Navigation, Pagination } from 'swiper/modules';
         const index = [...this.parentElement.children].indexOf(this);
         popupGallerySwiper.slideTo(index);
       });
-      buttonOpenGallery.addEventListener('click', function(){
-        let numberPattern = /\d+/g;
-        let counter = this.textContent.match(numberPattern).join('');
-        popupGallerySwiper.slideTo(+counter - 1);
-      });
+      
+    });
+    buttonOpenGallery.addEventListener('click', function(){
+      counter++;
+      popupGallerySwiper.slideTo(counter);
     });
   });
 

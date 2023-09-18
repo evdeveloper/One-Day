@@ -71,9 +71,23 @@ document.addEventListener('click', e => {
   if(e.target.closest('[data-popup-open]')) {
     e.preventDefault();
     openModal(e.target.closest('[data-popup-open]').getAttribute('data-popup-open'));
+    document.querySelector('.popup.show').insertAdjacentHTML('afterbegin', '<div class="lds-ripple"><div></div><div></div></div>');
+    setTimeout(() => document.querySelector('.popup.show .lds-ripple').remove(), 450);
+    if(document.querySelectorAll('.popup.show').length > 1) {
+      document.querySelector('.popup.popup-agree .popup__backdrop').style.display = 'none';
+      body.classList.add('hidden');
+    }
   }
-  if(e.target.closest('.popup__close') || e.target.closest('.popup__backdrop')) {
+  if(e.target.closest('.popup__close')) {
     closeModal(e.target.closest('.popup').getAttribute('data-popup-target'));
+  }
+  if(e.target.closest('.popup__backdrop')) {
+    if(document.querySelectorAll('.popup.show').length > 1) {
+      document.querySelector('.popup.popup-agree').classList.remove('show');
+      return false;
+    }
+    document.querySelector('.popup.show').classList.remove('show');
+    body.classList.remove('hidden');
   }
   if(e.target.closest('.js-confirm-order')) {
     document.querySelector('form.order-form > button[type="submit"]')?.click();

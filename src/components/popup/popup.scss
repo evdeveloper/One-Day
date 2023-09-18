@@ -84,7 +84,10 @@
     }
   }
   &#{$this}-gallery {
-    #{$this}__content { max-width: 1000px; }
+    #{$this}__content {
+      width: auto;
+      max-width: unset; 
+    }
   }
   &__inner {
     display: flex;
@@ -217,9 +220,13 @@
   &__slide {
     display: flex;
     align-items: center;
-    max-width: 1000px; 
+    justify-content: center;
     user-select: none; 
-    img { margin: 0 auto; height: 100%; }
+    img {
+      width: auto;
+      height: 100vh;
+      object-fit: contain;
+    }
   }
   &__prev { left: 5px; }
   &__next { right: 5px; }

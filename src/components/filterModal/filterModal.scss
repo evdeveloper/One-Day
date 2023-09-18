@@ -209,7 +209,6 @@
   }
   &__item {
     display: block;
-    #{$this}__checkbox label { font-size: 12px; font-weight: normal; }
     @include media(1100px) {
       display: none;
       &.active { display: block; }

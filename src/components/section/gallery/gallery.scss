@@ -7,6 +7,20 @@
     max-width: 840px;
     margin-bottom: 28px;
   }
+  &__name {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    padding: 0 24px 36px;
+    font-size: 25px;
+    font-weight: 500;
+    @include media(481px) {
+      font-size: 20px;
+      padding: 0 10px 20px;
+    }
+  }
   &__inner {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

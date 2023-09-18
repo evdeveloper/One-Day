@@ -14,9 +14,6 @@ html(lang="ru-RU")
     meta(name="keywords" content="")
     meta(name="description" content="")
     meta(name="color-theme" content="")
-    link(rel="preconnect" href="https://fonts.googleapis.com")
-    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet")
     link(rel="stylesheet" type='text/css' href=`${baseDir}/css/main.css?ver='${Math.random()}'`)
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
@@ -71,7 +68,7 @@ html(lang="ru-RU")
             span г.Москва, 
             | ул. Краснопролетарская, д.7
           .popup__address-item
-            span Работаем ежедневно
+            span Работаем ежедневно 
             | с 11:00 до 20:00
         form.form.popup__form(action='/')
           .popup__form-inner
@@ -180,7 +177,7 @@ html(lang="ru-RU")
         button(type="button" class="button button-buy button--fill js-add-basket")
           +icon('basket-bold','button-buy__icon')
           span В корзину
-    script(src=`${baseDir}/js/main.js`)
+    script(src=`${baseDir}/js/main.js?ver='${Math.random()}'`)
     script.
       setTimeout(() => {
         let GTMObject = document.createElement("script");
