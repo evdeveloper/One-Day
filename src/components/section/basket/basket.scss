@@ -10,6 +10,7 @@
   }
   &__inner {
     display: flex;
+    align-items: flex-start;
     gap: 64px;
     @include media(1200px) { gap: 5px; }
     @include media(1100px) {
@@ -25,7 +26,8 @@
     @include media(1100px) { gap: 10px; }
   }
   &__checkout {
-    position: relative;
+    position: sticky;
+    top: 65px;
     max-width: 350px;
     flex: 0 0 350px;
     background-color: var(--blue);

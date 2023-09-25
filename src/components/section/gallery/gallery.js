@@ -3,14 +3,15 @@ import enquire from 'enquire.js';
 
 (() => {
   const gallery = document.querySelector('.galleryCard');
+  const galleryInner = gallery?.querySelector('.galleryCard__inner');
   const galleryPopup = document.querySelector('.popupGallery');
   const galleryPopupSlides = galleryPopup?.querySelectorAll('.popupGallery__slide');
   let counterShowGallery = 4;
-  let galleryConter = galleryPopupSlides?.length - counterShowGallery;
+  let galleryCounter = galleryPopupSlides?.length - counterShowGallery;
   let counter = counterShowGallery;
   if(gallery) {
     if(galleryPopupSlides?.length > counterShowGallery) {
-      gallery.querySelector('.js-gallery-upload').textContent = `Смотреть ещё ${galleryConter} ${wordCounter(galleryConter, ['фотографию', 'фотографии', 'фотографий'])}`;
+      gallery.querySelector('.js-gallery-upload').textContent = `Смотреть ещё ${galleryCounter} ${wordCounter(galleryCounter, ['фотографию', 'фотографии', 'фотографий'])}`;
     } else {
       gallery.querySelector('.js-gallery-upload').remove();
     }
@@ -19,15 +20,26 @@ import enquire from 'enquire.js';
     if(e.target.closest('.js-gallery-upload')) {
       const _self = e.target.closest('.js-gallery-upload');
       counter++;
-      galleryConter--;
-      _self.textContent = `Смотреть ещё ${galleryConter} ${wordCounter(galleryConter, ['фотографию', 'фотографии', 'фотографий'])}`;
-      if(!galleryConter) { _self.remove(); }
+      galleryCounter--;
+      _self.textContent = `Смотреть ещё ${galleryCounter} ${wordCounter(galleryCounter, ['фотографию', 'фотографии', 'фотографий'])}`;
+      if(!galleryCounter) { _self.remove(); }
     } 
   });
 
   enquire.register("screen and (max-width:481px)", {
     match: function() {
       document.querySelectorAll('.galleryCard__item')?.forEach(slide => slide.removeAttribute('data-popup-open'));
+      if(gallery) {
+        for(let i = 0; galleryCounter > i; i++) {
+          galleryInner.insertAdjacentHTML('beforeend',`
+            <div class="swiper-slide galleryCard__item">
+              <picture>
+                <source srcset="../static/images/card/${i + 5}.webp" type="image/webp">
+                <img class="lozad" data-src="../static/images/card/${i + 5}.jpg" alt="img">
+              </picture>
+            </div>`);
+        }
+      }
     }
   });
 })();
