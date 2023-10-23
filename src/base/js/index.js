@@ -1,13 +1,17 @@
-import lozad from 'lozad'
+import lozad from 'lozad';
+import tippy from 'tippy.js';
 import { openModal, closeModal } from '../../../src/components/popup/popup';
 import { smoothScroll } from '../../../src/components/smoothScroll/smoothScroll';
 import { basketObserverCounter, basketProductConter } from '../../../src/components/section/basket/basket';
 
 const body = document.querySelector('body');
+const form = document.querySelectorAll('.form');
 const formMessages = document.querySelectorAll('.form__textarea');
 const header = document.querySelector('.header');
 const catalogMenu = header.querySelector('.catalogMenu');
 const basket = document.querySelector('.basket');
+
+tippy('[data-tippy-content]');
 
 const observer = lozad('.lozad', {
   rootMargin: '20px 0px',
@@ -17,7 +21,7 @@ observer.observe();
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeModal(document.querySelector('.popup.show').getAttribute('data-popup-target'));
+    closeModal(document.querySelector('.popup.show')?.getAttribute('data-popup-target'));
   }
 });
 
@@ -65,8 +69,8 @@ document.addEventListener('click', e => {
     smoothScroll(e.target.closest('[data-scroll-element]').getAttribute('data-scroll-element'));
   }
   if(!e.target.closest('.catalogMenu')) {
-    catalogMenu.classList.remove('active');
-    header.querySelector('.main-nav').classList.remove('active');
+    catalogMenu?.classList.remove('active');
+    header.querySelector('.main-nav')?.classList.remove('active');
   }
   if(e.target.closest('[data-popup-open]')) {
     e.preventDefault();
@@ -78,7 +82,7 @@ document.addEventListener('click', e => {
       body.classList.add('hidden');
     }
   }
-  if(e.target.closest('.popup__close')) {
+  if(e.target.closest('.popup__close') || e.target.closest('.popup__button-close')) {
     closeModal(e.target.closest('.popup').getAttribute('data-popup-target'));
   }
   if(e.target.closest('.popup__backdrop')) {

@@ -23,6 +23,12 @@
       padding: 0;
       background-color: var(--white);
     }
+    @include media(430px) { 
+      width: 160px;
+    }
+    @include media(360px) { 
+      width: 140px;
+    }
   }
   &__name {
     font-size: 14px;

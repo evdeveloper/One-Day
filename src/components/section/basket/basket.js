@@ -4,7 +4,7 @@ import { closeModal } from '../../popup/popup';
 const basket = document.querySelector('.basket');
 const basketPriceCounter = basket?.querySelector('.basket__price-count');
 const orderModal = document.querySelector('.confirm-order');
-const orderForm = document.querySelector('.order-form');
+const footer = document.querySelector('.footer');
 const counterBasketHeader = document.querySelector('.header .js-counterLink-basket');
 const counterBasketMobile = document.querySelector('.headerMobile .js-counterLink-basket');
 const counterFavoriteHeader = document.querySelector('.header .js-counterLink-favorite');
@@ -23,8 +23,12 @@ export function basketObserverCounter() {
 
 export function basketProductConter() {
   basketPriceCounter.innerHTML = `товаров: ${basket.querySelectorAll('.basket__item').length} шт.`;
-  counterBasketHeader.textContent = `${basket.querySelectorAll('.basket__item').length}`;
-  counterBasketMobile.textContent = `${basket.querySelectorAll('.basket__item').length}`;
+  if(counterBasketHeader) {
+    counterBasketHeader.textContent = `${basket.querySelectorAll('.basket__item').length}`;
+  }
+  if(counterBasketMobile) {
+    counterBasketMobile.textContent = `${basket.querySelectorAll('.basket__item').length}`;
+  }
   if(!basket.querySelectorAll('.basket__item').length) {
     basket.querySelector('.basket__price-sum span').textContent = 0;
   }
@@ -42,7 +46,7 @@ if(orderModal) {
     },
     { threshold: [0.2] }
   );
-  buyObserver.observe(orderForm);
+  buyObserver.observe(footer);
 }
 
 function basketCheckCounter() {
@@ -50,13 +54,21 @@ function basketCheckCounter() {
   let listNumber = Array.from(list).map(item => +item.querySelector('.counter__value').textContent);
   let result = listNumber.reduce((sum, current) => sum + current, 0);
   basketPriceCounter.innerHTML = `товаров: ${result} шт.`;
-  counterBasketHeader.textContent = `${result}`;
-  counterBasketMobile.textContent = `${result}`;
+  if(counterBasketHeader) {
+    counterBasketHeader.textContent = `${result}`;
+  }
+  if(counterBasketMobile) {
+    counterBasketMobile.textContent = `${result}`;
+  }
   if(!basket.querySelectorAll('.basket__item').length) {
     result = 0;
     basketPriceCounter.innerHTML = `товаров: ${result} шт.`;
-    counterBasketHeader.textContent = `${result}`;
-    counterBasketMobile.textContent = `${result}`;
+    if(counterBasketHeader) {
+      counterBasketHeader.textContent = `${result}`;
+    }
+    if(counterBasketMobile) {
+      counterBasketMobile.textContent = `${result}`;
+    }
   }
   return result;
 }
@@ -118,8 +130,13 @@ document.addEventListener('click', e => {
   }
   if(e.target.closest('.js-basket-product-postpone')) {
     counterFavorite++;
-    counterFavoriteHeader.textContent = `${counterFavorite}`;
-    counterFavoriteMobile.textContent = `${counterFavorite}`;
+    if(counterFavoriteHeader) {
+      counterFavoriteHeader.textContent = `${counterFavorite}`;
+    }
+    if(counterFavoriteMobile) {
+      counterFavoriteMobile.textContent = `${counterFavorite}`;
+    }
+    
   }
   if(e.target.closest('.basket__item-remove')) {
     const _self = e.target.closest('.basket__item-remove');

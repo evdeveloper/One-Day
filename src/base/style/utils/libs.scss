@@ -1,5 +1,6 @@
 @import "../../../../node_modules/normalize-scss/sass/_normalize.scss";
 @import "../../../../node_modules/swiper/swiper-bundle.min";
+@import "../../../../node_modules/tippy.js/dist/tippy";
 :root {
   --swiper-pagination-bullet-size: 5px;
   --swiper-pagination-bullet-width: 5px;
@@ -8,5 +9,9 @@
   --swiper-pagination-bullet-inactive-color: transparent;
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bottom: 14px;
+}
+[data-tippy-root] {
+  max-width: 180px;
+  text-align: center;
 }
 @import "../../../../node_modules/nouislider/dist/nouislider.min";

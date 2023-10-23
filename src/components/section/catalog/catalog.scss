@@ -4,10 +4,17 @@
     display: flex;
     gap: 90px;
     @include media(1200px) { gap: 40px; }
+    @include media(1100px) { gap: 0; }
   }
   &__main {
     .pagination { margin-bottom: 30px; }
     .cloud { margin-bottom: 10px; }
+    @include media(769px) { width: 100%; }
+  }
+  &-page {
+    .content {
+      @include media(769px) { overflow: hidden; }
+    }
   }
 }
 

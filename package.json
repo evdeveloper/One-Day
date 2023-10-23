@@ -85,6 +85,7 @@
     "lozad": "^1.16.0",
     "normalize-scss": "^7.0.1",
     "nouislider": "^15.7.1",
-    "swiper": "^10.2.0"
+    "swiper": "^10.2.0",
+    "tippy.js": "^6.3.7"
   }
 }

@@ -28,6 +28,11 @@ body {
   @include media(481px) { padding-top: 100px; }
 }
 
+.basket-page .wrapper {
+  @include media(600px) { padding-top: 77px; }
+  @include media(481px) { padding-top: 50px; }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -49,6 +54,10 @@ h2 {
   line-height: 120%;
   @include media(769px) { font-size: 24px; }
   @include media(481px) { font-size: 18px; }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul, li {

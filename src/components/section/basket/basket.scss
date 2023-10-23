@@ -57,7 +57,7 @@
     border-radius: 10px;
     background-color: var(--blue);
     padding: 60px;
-    @include media(769px) { padding: 20px 15px 40px; }
+    @include media(769px) { padding: 36px 15px 40px; }
     cursor: pointer;
     &-remove {
       display: flex;
@@ -77,10 +77,8 @@
     &-main {
       display: flex;
       gap: 65px;
-      @include media(769px) {
-        gap: 25px;
-        flex-direction: column;
-      }
+      @include media(769px) { gap: 25px; }
+      @include media(376px) { flex-direction: column; }
     }
     &-descr {
       font-weight: 500;
@@ -100,7 +98,12 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 20px;
-      @include media(769px) { flex-direction: column-reverse; padding-top: 25px; }
+      @include media(769px) {
+        flex-direction: column-reverse;
+        padding-top: 25px;
+        gap: 10px;
+        justify-content: flex-start;
+      }
       @include media(481px) { padding-top: 0; }
     }
     @include media-min(769px) { 
@@ -137,19 +140,14 @@
   user-select: none;
   gap: 27px;
   @include media(481px) {
-    position: absolute;
-    right: 15px;
-    bottom: calc(100% - 170px);
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
-    align-items: flex-end;
   }
-  @include media(415px) {
-    position: static;
+  @include media(376px) {
     flex-direction: row;
+    gap: 20px;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
   }
   &__inner {
     display: flex;

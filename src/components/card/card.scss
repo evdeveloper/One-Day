@@ -3,7 +3,7 @@
 
   margin-bottom: 120px;
   @include media(1100px) { margin-bottom: 60px; }
-  @include media(769px) { margin: 0 -10px 30px; }
+  @include media(769px) { margin: 0 -16px 30px; }
   &__item {
     @include media-min(1166px) {
       .swiper-pagination {
@@ -13,7 +13,7 @@
       &:hover { .swiper-pagination { opacity: 1; } }
     }
     @include media(769px) {
-      padding: 8px 5px 20px;
+      padding: 12px 5px 20px;
       border-bottom: 1px solid var(--blue);
       border-left: 1px solid var(--blue);
       &:nth-child(3n) { border-right: 1px solid var(--blue); }

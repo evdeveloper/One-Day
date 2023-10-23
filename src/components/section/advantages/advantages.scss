@@ -1,6 +1,30 @@
 .advantages {
+  $this: &;
+
   padding: 60px 0 45px;
   background-color: var(--blue);
+  &.small {
+    #{$this}__inner {
+      row-gap: 20px;
+      column-gap: 20px;
+      margin-top: 0;
+      @include media(960px) {
+        row-gap: 40px;
+      }
+    }
+    #{$this}__item {
+      width: calc(20% - 16px);
+      @include media(960px) {
+        width: calc(33.333% - 16px);
+      }
+      @include media(481px) {
+        width: calc(50% - 16px);
+      }
+      @include media(375px) {
+        width: 100%;
+      }
+    }
+  }
   @include media(769px) {
     padding: 45px 0 60px;
   }

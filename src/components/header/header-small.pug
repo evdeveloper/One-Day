@@ -1,0 +1,15 @@
+header.header
+  .container
+    .header__small
+      a(href="#").header__logo.logo
+        +icon('logo','logo__icon')
+      a(href="tel:+74956625815").header__phone.phone
+        +icon('phone','phone__icon')
+        span +7 495 662-58-15
+
+.headerMobile.small
+  .headerMobile__inner
+    include ../../../src/components/hamburger/hamburger
+    a(href="/").headerMobile__logo 
+      +icon('logo-small','headerMobile__logo-icon')
+    include ../../../src/components/call/call

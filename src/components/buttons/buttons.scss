@@ -25,6 +25,7 @@
   &--fill {
     background-color: var(--black);
     color: var(--white);
+    border: none;
     @include media-min(769px) {
       &:hover,
       &:focus {

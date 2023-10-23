@@ -10,6 +10,7 @@ import { Navigation, Pagination } from 'swiper/modules';
     const sliderSwiper = new Swiper(slider, {
       speed: 700,
       modules: [Navigation, Pagination],
+      loop: true,
       breakpoints: {
         320: {
           spaceBetween: 10,
@@ -34,19 +35,17 @@ import { Navigation, Pagination } from 'swiper/modules';
         prevEl: '.swiperGroup__prev',
       },
     });
-
     if (window.matchMedia("(min-width: 1200px)").matches) {
       sliderSwiper.on('slideNextTransitionStart', e => e.el.classList.add('swiperGroup__change'));
       sliderSwiper.on('slidePrevTransitionStart', e => e.el.classList.remove('swiperGroup__change'));
     }
-
   });
 
   // Swiper Group card
   const swiperCard = document.querySelectorAll('.cardMain__swiper');
   swiperCard.forEach(slider => {
     const sliderCard = new Swiper(slider, {
-      slidesPerView: 'auto',
+      slidesPerView: 'auto', 
       spaceBetween: 0,
       speed: 700,
       modules: [Navigation, Pagination],

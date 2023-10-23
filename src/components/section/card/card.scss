@@ -67,8 +67,10 @@
       height: 19px;
       fill: var(--white);
     }
+    &.active { background-color: var(--gold); }
     @include media-min(769px) {
       &:hover { background-color: var(--arch); }
+      &.active:hover { background-color: #bf9b59; }
     }
   }
   &__buy {

@@ -20,10 +20,16 @@ html(lang="ru-RU")
     <![endif]-->
   body(class=pageClass)
     .wrapper
-      include ../../components/header/header
+      if(pageClass === 'basket-page')
+        include ../../components/header/header-small
+      else
+        include ../../components/header/header
       main.content#content
         block content
-      include ../../components/footer/footer
+      if(pageClass === 'basket-page')
+        include ../../components/footer/footer-small
+      else
+        include ../../components/footer/footer
     include ../../components/mobileMenu/mobileMenu
     include ../../components/filterModal/filterModal
     .popup.popup-one-click(data-popup-target="one-click")
@@ -166,6 +172,8 @@ html(lang="ru-RU")
             li 3.1.1. Заказчик предоставил программный продукт и оборудование в соответствии с правилами и требованиями настоящей Оферты.
             li 3.1.2. Заказчик осуществил Акцепт Оферты.
             li 3.2 Услуги предоставляются Заказчику в объеме, соответствующем сумме произведенной им предоплаты. Исполнитель оставляет за собой право немедленно расторгнуть Договор в одностороннем порядке в случае, если стоимость услуг, оказанных Исполнителем по Договору, стала равной или превысила сумму, оплаченную Заказчиком в качестве предоплаты за оказание услуг.
+        .popup__button-close
+          button(type="button" class="button button--fill") Закрыть
     if(pageClass === 'basket-page')
       .fixed-mobile-block.confirm-order
         button(type="button" class="button button--fill js-confirm-order" data-scroll-element="order-form")

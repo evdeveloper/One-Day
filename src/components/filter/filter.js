@@ -12,10 +12,13 @@ import { siblings } from '../siblings/siblings';
   filterPrices.forEach(price => {
     let rangeInputMin = price.querySelector('.priceRange__min');
     let rangeInputMax = price.querySelector('.priceRange__max');
-    let rangeInputs = [rangeInputMin, rangeInputMax];
+    let rangeInputMiddle = price.querySelector('.priceRange__middle');
+    let rangeInputs = [rangeInputMin, rangeInputMiddle, rangeInputMax];
 
     noUiSlider.create(price.querySelector('.sliderRange'), {
-      start: [0, 150000],
+      // start: [0, 30000],
+      start: [0, 15000, 30000],
+      behaviour: 'drag-all',
       connect: true,
       step: 1,
       range: {
@@ -25,14 +28,17 @@ import { siblings } from '../siblings/siblings';
     });
 
     const setRangeSlider = (i, value) => {
-      let arr = [null, null];
+      let arr = [null, null, null];
       arr[i] = value;
       price.querySelector('.sliderRange').noUiSlider.set(arr);
     };
 
     rangeInputs.forEach((el, i) => {
-      el.addEventListener('input', e => setRangeSlider(i, e.currentTarget.value));
-      el.addEventListener('blur', e => setRangeSlider(i, el.value));
+      if(el) {
+        el.addEventListener('input', e => setRangeSlider(i, e.currentTarget.value));
+        el.addEventListener('blur', e => setRangeSlider(i, el.value));
+      }
+      
     });
 
     price.querySelector('.sliderRange').noUiSlider.on('update', function(values, handle){
