@@ -1,51 +1,25 @@
 import noUiSlider from 'nouislider';
 import { fadeIn } from '../fade/fade';
+import rangeSelector from '../range/range';
 import { overlayAdd, overlayRemove } from '../overlay/overlay';
 import { siblings } from '../siblings/siblings';
 
 (() => {
   const body = document.querySelector('body');
   const filterModal = document.querySelector('.filterModal');
-  const filterPrices = document.querySelectorAll('.filter__price');
   const filterLimit = document.querySelectorAll('.filter__limit');
+  // const sliderRange = document.querySelectorAll('.sliderRange');
 
-  filterPrices.forEach(price => {
-    let rangeInputMin = price.querySelector('.priceRange__min');
-    let rangeInputMax = price.querySelector('.priceRange__max');
-    let rangeInputMiddle = price.querySelector('.priceRange__middle');
-    let rangeInputs = [rangeInputMin, rangeInputMiddle, rangeInputMax];
+  // sliderRange.forEach(range => new rangeSelector(document, range.className));
+  // sliderRange.forEach(range => console.log(range.className));
 
-    noUiSlider.create(price.querySelector('.sliderRange'), {
-      // start: [0, 30000],
-      start: [0, 15000, 30000],
-      behaviour: 'drag-all',
-      connect: true,
-      step: 1,
-      range: {
-        'min': [+rangeInputMin.value],
-        'max': [+rangeInputMax.value]
-      }
-    });
-
-    const setRangeSlider = (i, value) => {
-      let arr = [null, null, null];
-      arr[i] = value;
-      price.querySelector('.sliderRange').noUiSlider.set(arr);
-    };
-
-    rangeInputs.forEach((el, i) => {
-      if(el) {
-        el.addEventListener('input', e => setRangeSlider(i, e.currentTarget.value));
-        el.addEventListener('blur', e => setRangeSlider(i, el.value));
-      }
-      
-    });
-
-    price.querySelector('.sliderRange').noUiSlider.on('update', function(values, handle){
-      rangeInputs[handle].value = Math.round(values[handle]);
-    });
-  });
-
+  // new rangeSelector(document, '.sliderRange');
+  // new rangeSelector(document, '.sliderRange');
+  function updateRangeSelectors() {
+    document.querySelectorAll('[data-component="rangeSelector"]').forEach((e=>new rangeSelector(e)))
+  }
+  updateRangeSelectors();
+  
   filterLimit.forEach(limit => {
     const itemCheckbox = limit.querySelectorAll('.filter__checkbox');
     if(itemCheckbox.length <= 5) {

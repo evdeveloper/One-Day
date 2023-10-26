@@ -4,17 +4,15 @@
       | Цена
     .filter__body
       .filter__price
-        .sliderRange
-        .priceRange
-          .priceRange__item
-            span от
-            input(type="number" min="0" value="0" max="15000" class="priceRange__input priceRange__min" name="min")
-          .priceRange__item
-            span до
-            input(type="number" value="15000" min="0" max="15000" class="priceRange__input priceRange__middle" name="middle")
-          .priceRange__item
-            span до
-            input(type="number" value="30000" min="0" max="30000" class="priceRange__input priceRange__max" name="max")
+        .sliderRange(data-min="0" data-component="rangeSelector" data-from="0" data-max="2259000" data-to="2259000")
+          .sliderRange__inner
+          .priceRange
+            .priceRange__item
+              span от
+              input(type="number" data-min-input class="priceRange__input priceRange__min" name="min")
+            .priceRange__item
+              span до
+              input(type="number" data-max-input class="priceRange__input priceRange__max" name="max")
   .filter__item.filter__limit
     .filter__top 
       | Материал

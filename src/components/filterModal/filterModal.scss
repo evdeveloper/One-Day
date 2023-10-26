@@ -58,6 +58,7 @@
         }
       }
     }
+    @include media(415px) { font-size: 14px; }
   }
   &__view-all {
     font-weight: 500;
@@ -233,7 +234,6 @@
       font-size: 14px;
       padding-left: 10px;
     }
-    &:nth-child(2) { display: none; }
   }
   &__input {
     @include size(100%);
@@ -245,33 +245,30 @@
 }
 
 .sliderRange {
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  background: rgba(210,175,111,0.3);
-  box-shadow:none;
-  height: 5px;
-  padding: 0 10px;
-  margin-bottom: 20px;
-  .noUi-connect { background: transparent; }
-  .noUi-handle {
-    @include size(20px);
+  &__inner {
+    width: 100%;
+    border-radius: 5px;
     border: none;
-    pointer-events: all;
-    border-radius: 100px;
-    background: var(--gold);
-    box-shadow: none;
-    right: -10px;
-    cursor: pointer;
-    top: -7.5px;
-    &:after,
-    &:before {
-      display: none;
-    }
-  }
-  .noUi-origin {
-    &:nth-last-child(2) {
-      display: none;
+    background: rgba(210,175,111,0.3);
+    box-shadow:none;
+    height: 5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    .noUi-connect { background: transparent; }
+    .noUi-handle {
+      @include size(20px);
+      border: none;
+      pointer-events: all;
+      border-radius: 100px;
+      background: var(--gold);
+      box-shadow: none;
+      right: -10px;
+      cursor: pointer;
+      top: -7.5px;
+      &:after,
+      &:before {
+        display: none;
+      }
     }
   }
 }

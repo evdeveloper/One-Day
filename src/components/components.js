@@ -12,3 +12,4 @@ import './section/basket/basket';
 import './section/gallery/gallery';
 import './filter/filter';
 import './card/card';
+import './breadcrumbs/breadcrumbs';
