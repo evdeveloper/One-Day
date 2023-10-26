@@ -5,7 +5,7 @@ import { fadeIn, fadeOut } from '../fade/fade';
 (() => {
   document.querySelectorAll('form').forEach(form => {
     const validateForm = new JustValidate(form, {
-      validateBeforeSubmitting: true,
+      // validateBeforeSubmitting: true,
       errorLabelStyle: { color: "#D44444" },
       errorLabelCssClass: ['form__invalid'],
       errorFieldCssClass: ['form__error'],

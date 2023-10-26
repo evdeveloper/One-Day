@@ -110,6 +110,7 @@
       @include media(481px) { grid-template-columns: 1fr; }
     }
     .form__input { margin-bottom: 15px; @include media(481px) { margin-bottom: 0; } }
+    .form__invalid { margin-top: -15px; }
   }
   &__backdrop {
     position: fixed;

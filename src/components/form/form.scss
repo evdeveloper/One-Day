@@ -1,8 +1,7 @@
 .form {
   $this: &;
 
-  &#{$this}-error { 
-    #{$this}__input { margin-bottom: 15px; }
+  &#{$this}-error {
     #{$this}__textarea { margin-bottom: 0; }
   }
   &__item {
@@ -126,15 +125,9 @@
       }
     }
     #{$this}__invalid {
-      position: absolute;
       opacity: 0;
       pointer-events: none;
     }
   }
-  &__invalid {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: 12px;
-  }
+  &__invalid { font-size: 12px; text-align: right; }
 }
