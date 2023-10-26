@@ -79,6 +79,7 @@
     "yargs": "latest"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.24",
     "enquire.js": "latest",
     "imask": "^7.1.3",
     "just-validate": "^4.2.0",

@@ -1,5 +1,6 @@
 import { wordCounter } from '../../wordCounter/wordCounter';
 import enquire from 'enquire.js';
+import { Fancybox } from "@fancyapps/ui";
 
 (() => {
   const gallery = document.querySelector('.galleryCard');
@@ -9,6 +10,7 @@ import enquire from 'enquire.js';
   let counterShowGallery = 4;
   let galleryCounter = galleryPopupSlides?.length - counterShowGallery;
   let counter = counterShowGallery;
+  Fancybox.bind("[data-fancybox]");
   if(gallery) {
     if(galleryPopupSlides?.length > counterShowGallery) {
       gallery.querySelector('.js-gallery-upload').textContent = `Смотреть ещё ${galleryCounter} ${wordCounter(galleryCounter, ['фотографию', 'фотографии', 'фотографий'])}`;
@@ -30,14 +32,16 @@ import enquire from 'enquire.js';
     match: function() {
       document.querySelectorAll('.galleryCard__item')?.forEach(slide => slide.removeAttribute('data-popup-open'));
       if(gallery) {
-        for(let i = 0; galleryCounter > i; i++) {
-          galleryInner.insertAdjacentHTML('beforeend',`
-            <div class="swiper-slide galleryCard__item">
+        galleryInner.innerHTML = '';
+        for(let i = 1; galleryPopupSlides?.length + 1 > i; i++) {
+          galleryInner.innerHTML += ` 
+            <div class="swiper-slide galleryCard__item" data-fancybox data-src="../static/images/card/${i}.webp" data-caption="Описание">
               <picture>
-                <source srcset="../static/images/card/${i + 5}.webp" type="image/webp">
-                <img class="lozad" data-src="../static/images/card/${i + 5}.jpg" alt="img">
+                <source srcset="../static/images/card/${i}.webp" type="image/webp">
+                <img class="lozad" data-src="../static/images/card/${i}.jpg" alt="img">
               </picture>
-            </div>`);
+            </div>
+          `;
         }
       }
     }
