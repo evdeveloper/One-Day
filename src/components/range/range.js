@@ -53,7 +53,7 @@ class rangeSelector {
       connect: true,
       range
     });
-}
+  }
 
   destroySliderIfExists() {
     this.slider?.noUiSlider?.destroy();
